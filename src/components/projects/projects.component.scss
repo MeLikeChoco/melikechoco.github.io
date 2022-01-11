@@ -73,14 +73,14 @@ a {
     }
 
     &-languages {
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     &-language {
-        // border: 1px solid colors.$mischka;
         border-radius: 3px;
         font-size: 0.9rem;
         font-weight: 600;
+        line-height: 1.5rem;
         color: colors.$polo-blue;
 
         &:not(:last-child) {

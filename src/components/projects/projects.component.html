@@ -17,7 +17,6 @@
             <hr>
             <ng-container *ngIf="(repo.languages | keyvalue)?.length">
                 <div class="project-languages">
-
                     <span class="project-language"
                         *ngFor="let language of repo.languages | keyvalue: dummyFunctionToPreserveOrder">
                         {{language.key}}: {{language.value}}%
@@ -25,6 +24,7 @@
                 </div>
             </ng-container>
             <div>
+                <!--extra div wrapping is so the border of project-stars-count doesn't overflow out of project-footer div-->
                 <div class="project-footer">
                     <a class="project-stars" target="_blank" href={{repo.stargazersUrl}}>
                         <i class="fas fa-star"></i>

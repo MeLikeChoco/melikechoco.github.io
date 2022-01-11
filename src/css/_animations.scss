@@ -1,0 +1,57 @@
+$fade-in: fade-in 600ms forwards;
+$slide-up: slide-up 400ms;
+
+.fade-in {
+    animation: $fade-in;
+}
+
+.slide-up {
+    animation: $slide-up;
+}
+
+.fade-in-slide-up {
+    animation: $fade-in, $slide-up;
+}
+
+.loading {
+    opacity: 0.5;
+    animation: loading 1s linear infinite alternate;
+
+    &-text {
+        @extend .loading;
+
+        height: 0.5rem;
+        margin-bottom: 0.25rem;
+        border-radius: 0.125rem;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(30%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes loading {
+    from {
+        background-color: hsl(200%, 20%, 70%);
+    }
+
+    to {
+        background-color: hsl(200%, 20%, 95%);
+    }
+}

@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+//global style
+@use "./css/colors";
+@use "./css/animations";
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Open+Sans&family=Ubuntu:wght@300;400;500;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    z-index: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    background-color: colors.$mirage;
+    color: colors.$mischka;
+    font-size: 100%;
+    scroll-behavior: smooth;
+    scrollbar-color: colors.$mischka colors.$elm;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        opacity: 0;
+        background: colors.$elm;
+        width: 0.6rem;
+
+        &-thumb {
+            border-radius: 10px;
+            background: colors.$mischka;
+        }
+    }
+}
+
+html .section-title {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+// ::-webkit-scrollbar-track-piece {
+// }
+
+// ::-webkit-scrollbar-corner {
+// }

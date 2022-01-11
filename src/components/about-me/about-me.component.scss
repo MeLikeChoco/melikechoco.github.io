@@ -1,0 +1,31 @@
+@use "../../css/colors";
+
+#about-me {
+    &-description {
+        margin-left: 7rem;
+        margin-right: 7rem;
+        margin-bottom: 3rem;
+        color: colors.$polo-blue;
+    }
+
+    &-contacts {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        > a {
+            padding: 0.625rem;
+            font-size: 1rem;
+            color: colors.$mischka;
+            border: 1px solid colors.$mischka;
+            border-radius: 5px;
+            text-decoration: none;
+
+            &:hover {
+                background-color: colors.$picked-bluewood;
+                color: colors.$di-serria;
+                transition: background-color 300ms, color 100ms;
+            }
+        }
+    }
+}

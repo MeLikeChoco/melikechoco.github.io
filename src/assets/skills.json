@@ -1,0 +1,60 @@
+{
+    "languages": [
+        {
+            "name": "C#",
+            "image": "https://static.cdnlogo.com/logos/c/27/c.svg"
+        },
+        {
+            "name": "Javascript / Typescript",
+            "image": "https://static.cdnlogo.com/logos/t/96/typescript.svg"
+        },
+        {
+            "name": "Java",
+            "image": "https://static.cdnlogo.com/logos/j/2/java.svg"
+        }
+    ],
+    "frameworks": [
+        {
+            "name": ".NET Core",
+            "image": "https://static.cdnlogo.com/logos/d/6/dot-net-core.svg"
+        },
+        {
+            "name": "ASP.NET Core",
+            "image": "https://e7.pngegg.com/pngimages/673/239/png-clipart-entity-framework-core-asp-net-core-net-framework-microsoft-blue-text.png"
+        },
+        {
+            "name": "NServiceBus",
+            "image": "https://api.nuget.org/v3-flatcontainer/nservicebus/7.6.0/icon"
+        },
+        {
+            "name": "React",
+            "image": "https://static.cdnlogo.com/logos/r/63/react.svg"
+        },
+        {
+            "name": "Electron",
+            "image": "https://static.cdnlogo.com/logos/e/19/electron.svg"
+        }
+    ],
+    "others": [
+        {
+            "name": "Git",
+            "image": "https://static.cdnlogo.com/logos/g/15/git-icon.svg"
+        },
+        {
+            "name": "SQL (PostgreSQL, MSSQL)",
+            "image": "https://static.cdnlogo.com/logos/p/93/postgresql.svg"
+        },
+        {
+            "name": "HTML / CSS",
+            "image": "https://www.svgrepo.com/show/294145/code.svg"
+        },
+        {
+            "name": "Linux",
+            "image": "https://static.cdnlogo.com/logos/l/6/linux-tux.svg"
+        },
+        {
+            "name": "Android",
+            "image": "https://static.cdnlogo.com/logos/a/92/android.svg"
+        }
+    ]
+}

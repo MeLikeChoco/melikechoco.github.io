@@ -1,0 +1,17 @@
+@use "../../css/colors";
+
+.section {
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+    &-alt {
+        @extend .section;
+        background-color: colors.$slightly-dark-east-bay;
+    }
+}
+
+.section-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60rem;
+}

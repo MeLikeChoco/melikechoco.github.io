@@ -1,0 +1,19 @@
+nav {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem;
+    margin-left: 2rem;
+    z-index: 100;
+}
+
+#nav-links > a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5rem;
+
+    &:not(:last-child) {
+        margin-right: 0.8rem;
+    }
+}

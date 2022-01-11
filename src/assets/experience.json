@@ -1,0 +1,27 @@
+[
+    {
+        "employer": "Freelancer",
+        "title": "Java Software Developer",
+        "location": "Remote",
+        "when": "2016 - 2018",
+        "logo": "https://static.cdnlogo.com/logos/m/26/minecraft.svg",
+        "info": [
+            "Extensive usage/integration of JDBC and Guice",
+            "Developed server side Java plugins for Minecraft servers ranging from player management to plugins with visual particle effects to web-based visualization tools",
+            "Worked with a variety of teams to integrate Java plugins for Minecraft servers to ensure compatibility with existing plugins"
+        ]
+    },
+    {
+        "employer": "AmeriHome Mortgage",
+        "title": "Backend Software Engineer Intern",
+        "location": "Remote",
+        "when": "July 2021 - August 2021",
+        "logo": "https://www.pngfind.com/pngs/m/495-4955083_amerihome-mortgage-logo-hd-png-download.png",
+        "info": [
+            "Extensive usage of .NET Core, ASP.NET Core, C#, NServiceBus, RabbitMQ, xUnit, and Microsoft SQL/MSSQL",
+            "Implemented and worked with NServiceBus and RabbitMQ to facilitate asynchronous messaging and communication between microservices",
+            "Developed a service to save and offload cloud storage costs by moving over 2 million loan documents to company/onsite servers",
+            "Aided and accelerated in opening a new line of business servicing Early Buyout (EBO) loans"
+        ]
+    }
+]

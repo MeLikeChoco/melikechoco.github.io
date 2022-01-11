@@ -1,0 +1,101 @@
+@use "../../css/colors";
+
+$nav-tab-height: 2.625rem;
+$glider-width: 2px;
+
+#experience {
+    &-content {
+        display: flex;
+    }
+
+    &-info-container {
+        margin-top: 0.625rem;
+        margin-left: 1.25rem;
+    }
+}
+
+nav {
+    position: relative;
+
+    & > ul {
+        width: max-content;
+    }
+}
+
+.navtab {
+    height: $nav-tab-height;
+    padding: 0.625rem;
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+    list-style-type: none;
+    font-size: 1rem;
+    border-left: $glider-width solid colors.$picked-bluewood;
+    cursor: pointer;
+    color: colors.$polo-blue;
+    transition: all 250ms;
+
+    &-active,
+    &:hover {
+        color: colors.$mischka;
+        background-color: #333c51ad;
+    }
+}
+
+#experience-nav-glider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: $nav-tab-height;
+    width: $glider-width;
+    background-color: colors.$mischka;
+    box-shadow: -2px 0px 5px colors.$polo-blue;
+    transition: transform 250ms cubic-bezier(0.645, 0.045, 0.355, 1),
+        box-shadow 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.experience-info {
+    margin-left: 0.9rem;
+    opacity: 0;
+
+    > h3 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.3rem;
+        font-weight: 500;
+        color: colors.$di-serria;
+
+        > span {
+            font-style: normal;
+            font-weight: 200;
+            font-size: 0.95rem;
+            color: colors.$mischka;
+        }
+    }
+
+    > h4 {
+        margin-bottom: 1rem;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 0.95rem;
+    }
+
+    > div > ul {
+        margin-left: 1.2rem;
+        list-style-position: outside;
+        color: colors.$polo-blue;
+
+        > li {
+            line-height: 1.5rem;
+
+            &:not(:last-child) {
+                margin-bottom: 0.625rem;
+            }
+
+            &::marker {
+                color: colors.$di-serria;
+            }
+        }
+    }
+}

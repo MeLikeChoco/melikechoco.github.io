@@ -15,12 +15,15 @@
                 </a>
             </div>
             <hr>
-            <div class="project-languages">
-                <span class="project-language"
-                    *ngFor="let language of repo.languages | keyvalue: dummyFunctionToPreserveOrder">
-                    {{language.key}}: {{language.value}}%
-                </span>
-            </div>
+            <ng-container *ngIf="(repo.languages | keyvalue)?.length">
+                <div class="project-languages">
+
+                    <span class="project-language"
+                        *ngFor="let language of repo.languages | keyvalue: dummyFunctionToPreserveOrder">
+                        {{language.key}}: {{language.value}}%
+                    </span>
+                </div>
+            </ng-container>
             <div>
                 <div class="project-footer">
                     <a class="project-stars" target="_blank" href={{repo.stargazersUrl}}>
@@ -28,9 +31,12 @@
                         <span>Stars&nbsp;</span>
                         <span class="project-stars-count">{{repo.stargazersCount}}</span>
                     </a>
-                    <a target="_blank" href={{repo.latestCommitUrl}}>
+                    <a target="_blank" href={{repo.latestCommitUrl}} *ngIf="repo.latestCommitUrl">
                         <small class="project-updated-at">Updated at {{repo.updatedAt | date: 'longDate'}}</small>
                     </a>
+                    <ng-template #noLatestCommit>
+                        <small class="project-updated-at">Updated at {{repo.updatedAt | date: 'longDate'}}</small>
+                    </ng-template>
                 </div>
             </div>
         </div>

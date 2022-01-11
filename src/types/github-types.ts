@@ -24,7 +24,7 @@ export type GithubRepo = {
     repoUrl: string;
     downloadUrl: string;
     stargazersUrl: string;
-    latestCommitUrl: string;
+    latestCommitUrl: string | null;
 };
 
 export type GithubRepoLanguages = {

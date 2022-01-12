@@ -6,8 +6,8 @@
                 [ngClass]="{'navtab-active': activeTab == i}" (click)="navtabClicked(i)">
                 {{employer}}
             </li>
-            <div #experienceNavGlider id="experience-nav-glider"></div>
         </ul>
+        <div #experienceNavGlider id="experience-nav-glider"></div>
     </nav>
     <div id="experience-info-container">
         <ng-template ngFor let-experience [ngForOf]="experiences" let-i="index">

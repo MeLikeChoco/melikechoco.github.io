@@ -22,21 +22,21 @@
         <ng-container *ngIf="enableLanguages">
             <div class="skill-card" *ngFor="let language of skills.languages; index as i; trackBy: identify"
                 [style.animation-delay]="(100 * i) + 'ms'" in-view (inView)="animateSkill($event)">
-                <img src={{language.image}}>
+                <img height="80" src={{language.image}} [alt]="language.name">
                 <span>{{language.name}}</span>
             </div>
         </ng-container>
         <ng-container *ngIf="enableFrameworks">
             <div class="skill-card" *ngFor="let framework of skills.frameworks; index as i; trackBy: identify"
                 [style.animation-delay]="(100 * i) + 'ms'" in-view (inView)="animateSkill($event)">
-                <img src={{framework.image}}>
+                <img height="80" src={{framework.image}} [alt]="framework.name">
                 <span>{{framework.name}}</span>
             </div>
         </ng-container>
         <ng-container *ngIf="enableOthers">
             <div class="skill-card" *ngFor="let others of skills.others; index as i; trackBy: identify"
                 [style.animation-delay]="(100 * i) + 'ms'" in-view (inView)="animateSkill($event)">
-                <img src={{others.image}}>
+                <img height="80" src={{others.image}} [alt]="others.name">
                 <span>{{others.name}}</span>
             </div>
         </ng-container>

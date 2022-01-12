@@ -31,12 +31,14 @@
                         <span>Stars&nbsp;</span>
                         <span class="project-stars-count">{{repo.stargazersCount}}</span>
                     </a>
-                    <a target="_blank" href={{repo.latestCommitUrl}} *ngIf="repo.latestCommitUrl">
-                        <small class="project-updated-at">Updated at {{repo.updatedAt | date: 'longDate'}}</small>
-                    </a>
-                    <ng-template #noLatestCommit>
-                        <small class="project-updated-at">Updated at {{repo.updatedAt | date: 'longDate'}}</small>
-                    </ng-template>
+                    <ng-container>
+                        <a target="_blank" href={{repo.latestCommitUrl}} *ngIf="repo.latestCommitUrl">
+                            <small class="project-updated-at">Updated at {{repo.updatedAt | date: 'longDate'}}</small>
+                        </a>
+                        <ng-template #noLatestCommit>
+                            <small class="project-updated-at">Updated at {{repo.updatedAt | date: 'longDate'}}</small>
+                        </ng-template>
+                    </ng-container>
                 </div>
             </div>
         </div>

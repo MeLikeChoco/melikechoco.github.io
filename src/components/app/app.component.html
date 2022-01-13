@@ -1,14 +1,31 @@
 <nav>
     <div id="nav-links">
-        <a href="#intro">&#123;&nbsp;&nbsp;Edgar;&nbsp;&nbsp;&#125;</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
+        <input type="radio" id="radio-intro" class="nav-radio" name="nav" checked>
+        <label class="navtab" for="radio-intro">
+            <a href="#intro">&#123;&nbsp;&nbsp;Edgar;&nbsp;&nbsp;&#125;</a>
+        </label>
+        <input type="radio" id="radio-skills" class="nav-radio" name="nav">
+        <label class="navtab" for="radio-skills">
+            <a href="#skills">Skills</a>
+        </label>
+        <input type="radio" id="radio-experience" class="nav-radio" name="nav">
+        <label class="navtab" for="radio-experience">
+            <a href="#experience">Experience</a>
+        </label>
+        <input type="radio" id="radio-projects" class="nav-radio" name="nav">
+        <label class="navtab" for="radio-projects">
+            <a href="#projects">Projects</a>
+        </label>
+        <input type="radio" id="radio-about-me" class="nav-radio" name="nav">
+        <label class="navtab" for="radio-about-me">
+            <a href="#about-me">About Me</a>
+        </label>
+        <!-- <div id="nav-links-glider" #navLinksGlider></div> -->
     </div>
 </nav>
 <intro></intro>
-<skills *section></skills>
-<experience *section="''; useAltColor: true"></experience>
-<projects *section></projects>
-<about-me *section="''; useAltColor: true"></about-me>
+<skills *section="''; id:'skills'"></skills>
+<experience *section="''; useAltColor: true; id:'experience'"></experience>
+<projects *section="''; id:'projects'"></projects>
+<about-me *section="''; useAltColor: true; id:'about-me'"></about-me>
 <app-footer></app-footer>

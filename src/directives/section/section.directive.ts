@@ -6,11 +6,9 @@ import { SectionComponent } from 'src/components/section/section.component';
 })
 export class SectionDirective implements OnInit {
 
-  private _sectionUseAltColor = false;
-  @Input()
-  set sectionUseAltColor(value: boolean) {
-    this._sectionUseAltColor = value;
-  }
+  @Input() sectionUseAltColor = false;
+
+  @Input() sectionId: string | null;
 
   private sectionRef: ComponentRef<SectionComponent>;
 
@@ -22,8 +20,10 @@ export class SectionDirective implements OnInit {
   ngOnInit(): void {
 
     this.sectionRef = this.viewContainerRef.createComponent(SectionComponent);
-    this.sectionRef.instance.content = this.contentRef;
-    this.sectionRef.instance.useAltColor = this._sectionUseAltColor;
+    const instance = this.sectionRef.instance;
+    instance.content = this.contentRef;
+    instance.useAltColor = this.sectionUseAltColor;
+    instance.id = this.sectionId;
 
   }
 

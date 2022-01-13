@@ -6,7 +6,7 @@ import { filter, Subject } from 'rxjs';
 })
 export class InViewDirective implements OnInit, OnDestroy, AfterViewInit {
 
-  @Input() threshold = 0.5;
+  @Input('inViewThreshold') threshold = 0.5;
   
   @Output() inView = new EventEmitter<HTMLElement>();
 

@@ -6,7 +6,7 @@ import { AppComponent } from '../components/app/app.component';
 import { IntroComponent } from 'src/components/intro/intro.component';
 import { SkillsComponent } from 'src/components/skills/skills.component';
 import { AppFooterComponent } from 'src/components/footer/app-footer.component';
-import { InViewDirective } from 'src/directives/appear/in-view.directive';
+import { InViewDirective } from 'src/directives/in-view/in-view.directive';
 import { ExperienceComponent } from 'src/components/experience/experience.component';
 import { ProjectsComponent } from 'src/components/projects/projects.component';
 import { GithubService } from 'src/services/github-service/github.service';

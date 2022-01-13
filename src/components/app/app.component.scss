@@ -1,19 +1,57 @@
+@use "../../css/colors";
+
+$glider-height: 2.3rem;
+$glider-width: 8rem;
+
 nav {
     position: fixed;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     margin: 1rem;
-    margin-left: 2rem;
+    padding: 0.5rem 1rem;
     z-index: 100;
+    background-color: colors.$firefly;
+    border: 1px solid colors.$east-bay;
+    border-radius: 99rem;
 }
 
-#nav-links > a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 1.5rem;
+#nav-links {
+    position: relative;
+    display: flex;
 
-    &:not(:last-child) {
-        margin-right: 0.8rem;
+    > input[type="radio"] {
+        display: none;
+
+        // &:checked + label > a {
+        //     color: colors.$di-serria;
+        // }
+    }
+
+    > label {
+        height: $glider-height;
+        width: $glider-width;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        > a {
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            line-height: $glider-height;
+            text-decoration: none;
+            color: colors.$mischka;
+            font-size: 1.3rem;
+            transition: color 250ms  cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+    }
+
+    &-glider {
+        position: absolute;
+        height: $glider-height;
+        width: $glider-width;
+        background-color: colors.$east-bay;
+        border-radius: 99rem;
+        z-index: 0;
+        transition: transform 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
     }
 }

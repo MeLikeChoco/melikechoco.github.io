@@ -1,10 +1,4 @@
-import { AfterViewChecked, Component, ElementRef } from '@angular/core';
-import { AboutMeComponent } from '../about-me/about-me.component';
-import { ExperienceComponent } from '../experience/experience.component';
-import { AppFooterComponent } from '../footer/app-footer.component';
-import { IntroComponent } from '../intro/intro.component';
-import { ProjectsComponent } from '../projects/projects.component';
-import { SkillsComponent } from '../skills/skills.component';
+import { AfterViewChecked, AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app',
@@ -13,16 +7,26 @@ import { SkillsComponent } from '../skills/skills.component';
     './app.component.scss'
   ]
 })
-export class AppComponent implements AfterViewChecked {
+export class AppComponent implements AfterViewInit, AfterViewChecked {
 
-  intro = IntroComponent;
-  skills = SkillsComponent;
-  footer = AppFooterComponent;
-  experience = ExperienceComponent;
-  projects = ProjectsComponent;
-  aboutMe = AboutMeComponent;
+  @ViewChild('navLinksGlider') navLinksGlider: ElementRef<HTMLDivElement>
 
-  constructor(private element: ElementRef<HTMLElement>) {
+  private tabToIndex: { [id: string]: number } = {};
+  private navRadios: HTMLInputElement[];
+
+  constructor(private element: ElementRef<HTMLElement>) { }
+
+  ngAfterViewInit(): void {
+
+    [...this.element.nativeElement.getElementsByTagName('label')].forEach((element, index) => {
+
+      element.addEventListener('click', this.labelClicked.bind(this));
+
+      this.tabToIndex[element.htmlFor] = index;
+
+    });
+
+    this.navRadios = [...this.element.nativeElement.getElementsByTagName('input')];
 
   }
 
@@ -32,6 +36,27 @@ export class AppComponent implements AfterViewChecked {
 
     if (links.length != 0)
       links.forEach(element => element.rel = 'noreferrer');
+
+  }
+
+  labelClicked(event: MouseEvent) {
+
+    const targetParent = (<HTMLElement>event.target).parentElement;
+
+    if (targetParent instanceof HTMLLabelElement) {
+
+      const index = this.tabToIndex[targetParent.htmlFor];
+      
+      this.moveGlider(index);
+
+    }
+
+  }
+
+  moveGlider(index: number) {
+
+    // this.navLinksGlider.nativeElement.style.transform = `translateX(${100 * index}%)`;
+    this.navRadios[index].checked = true;
 
   }
 

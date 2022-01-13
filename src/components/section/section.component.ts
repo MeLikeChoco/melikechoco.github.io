@@ -8,8 +8,8 @@ import { Component, Input, TemplateRef } from '@angular/core';
 export class SectionComponent {
 
   @Input() content: TemplateRef<any>;
-
-  useAltColor = false;
+  @Input() id: string | null;
+  @Input() useAltColor = false;
 
   constructor() { }
 

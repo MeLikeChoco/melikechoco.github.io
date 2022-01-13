@@ -1,4 +1,5 @@
 @use '../../css/colors';
+@use 'sass:color';
 
 #intro {
     position: relative;
@@ -7,7 +8,7 @@
     justify-content: center;
     min-height: 100vh;
     // background-color: #262626;
-    background-color: colors.$dark-east-bay;
+    background-color: color.adjust(colors.$dark-east-bay, $lightness: -7%);
 
     &::before {
         content: "";

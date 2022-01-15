@@ -1,5 +1,5 @@
 import { KeyValue } from '@angular/common';
-import { AfterContentChecked, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { AfterContentChecked, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { GithubService } from 'src/services/github-service/github.service';
 import { GithubRepo } from '../../types/github-types';
@@ -10,7 +10,7 @@ import repos from '../../assets/repos.json';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent implements OnInit, AfterContentChecked {
+export class ProjectsComponent implements OnInit, AfterContentChecked, OnDestroy {
 
   githubRepos$: Observable<GithubRepo>[];
   randomHeights: number[];
@@ -28,6 +28,12 @@ export class ProjectsComponent implements OnInit, AfterContentChecked {
 
   ngAfterContentChecked(): void {
     this._cdr.detectChanges();
+  }
+
+  ngOnDestroy(): void {
+
+    this.githubRepos$.forEach(repo$ => repo$.subscribe());
+
   }
 
   dummyFunctionToPreserveOrder(a: KeyValue<string, number>, b: KeyValue<string, number>) {

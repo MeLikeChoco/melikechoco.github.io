@@ -1,0 +1,97 @@
+@use "sass:color";
+
+$picked-bluewood: #2d384c;
+$mischka: #dbd6e3;
+$polo-blue: #7da7d2;
+$ship-cove: #6384b6;
+$east-bay: #455b82;
+$firefly: #050e16;
+$mirage: #1a2136;
+$oxford-blue: #333c51;
+$oxford-blue-opacity: #333c51e6;
+$elm: #1d7074;
+$cardinal: #cb2036;
+$waikawa-gray: #606c96;
+$gigas: #543a8c;
+$di-serria: #dca652;
+
+$slightly-dark-east-bay: #242c3c;
+$dark-east-bay: #1c2434;
+$dark-east-bay-opacity: #1c24344d;
+
+:root {
+    --default-text: #{$mischka};
+    --default-background: #{$mirage};
+    --generic-button-border: #{$mischka};
+    --generic-button-background: transparent;
+    --generic-button-text: #{$mischka};
+    --generic-button-hover-border: inherit;
+    --generic-button-hover-background: #{$picked-bluewood};
+    --generic-button-hover-text: #{$di-serria};
+
+    --scrollbar-thumb: #{$mischka};
+    --scrollbar-background: #{$elm};
+
+    --nav-background: #{$firefly};
+    --nav-border: #{$east-bay};
+    --nav-text: #{$mischka};
+    --nav-glider: #{$east-bay};
+
+    --theme-selector-background: #{$firefly};
+    --theme-selector-text: #{$mischka};
+
+    --intro-background-image: url(https://images.alphacoders.com/855/855864.png);
+    --intro-background-color: #{color.adjust($dark-east-bay, $alpha: -0.3)};
+    --intro-title: #{$mischka};
+    --intro-title-blinking-caret: #{$mischka};
+    --intro-subtitle: #{$mischka};
+    --intro-links: #{$mischka};
+    --intro-links-hover: #{$ship-cove};
+
+    --section-title: #{$mischka};
+    --section-background: #{$mirage};
+    --section-background-alt: #{$slightly-dark-east-bay};
+
+    --skills-tab-focused: #{$mischka};
+    --skills-tab-unfocused: #{$polo-blue};
+    --skills-tab-border: #{$mischka};
+    --skills-tab-box-shadow: #{$polo-blue};
+    --skills-name: #{$di-serria};
+
+    --experience-glider: #{$mischka};
+    --experience-glider-background: #{$picked-bluewood};
+    --experience-glider-highlight: #{$polo-blue};
+    --experience-tab-focused: #{$mischka};
+    --experience-tab-unfocused: #{$polo-blue};
+    --experience-tab-hover: #{color.adjust($oxford-blue, $alpha: -0.32)};
+    --experience-employer: #{$di-serria};
+    --experience-position: #{$mischka};
+    --experience-when: #{$mischka};
+    --experience-bullet: disc;
+    --experience-bullet-color: #{$di-serria};
+    --experience-info: #{$polo-blue};
+
+    --projects-border: #{$mischka};
+    --projects-box-shadow: #{color.adjust($polo-blue, $alpha: -0.85)};
+    --projects-name: #{$di-serria};
+    --projects-description: #{$polo-blue};
+    --projects-links-border: var(--generic-button-border);
+    --projects-links-text: var(--generic-button-text);
+    --projects-links-hover-background: var(--generic-button-hover-background);
+    --projects-links-hover-text: var(--generic-button-hover-text);
+    --projects-divider: #{$waikawa-gray};
+    --projects-languages: #{$polo-blue};
+    --projects-stars-icon: #{$di-serria};
+    --projects-stars-text: #{$mischka};
+    --projects-stars-count-background: #{$picked-bluewood};
+    --projects-stars-count: #{$di-serria};
+    --projects-updated-at: #{$ship-cove};
+
+    --about-me-description: #{$polo-blue};
+    --about-me-contact-me-border: #{$mischka};
+    --about-me-contact-me-text: #{$mischka};
+    --about-me-contact-me-hover-background: #{$picked-bluewood};
+    --about-me-contact-me-hover-text: #{$di-serria};
+
+    --footer-text: #{$mischka};
+}

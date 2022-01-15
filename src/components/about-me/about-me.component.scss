@@ -5,7 +5,7 @@
         margin-left: 7rem;
         margin-right: 7rem;
         margin-bottom: 3rem;
-        color: colors.$polo-blue;
+        color: var(--about-me-description);
     }
 
     &-contacts {
@@ -16,14 +16,14 @@
         > a {
             padding: 0.625rem;
             font-size: 1rem;
-            color: colors.$mischka;
-            border: 1px solid colors.$mischka;
+            color: var(--about-me-contact-me-text);
+            border: 1px solid var(--about-me-contact-me-border);
             border-radius: 5px;
             text-decoration: none;
 
             &:hover {
-                background-color: colors.$picked-bluewood;
-                color: colors.$di-serria;
+                background-color: var(--about-me-contact-me-hover-background);
+                color: var(--about-me-contact-me-hover-text);
                 transition: background-color 300ms, color 100ms;
             }
         }

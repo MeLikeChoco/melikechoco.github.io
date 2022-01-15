@@ -1,4 +1,6 @@
-import { AfterViewChecked, AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { NgcCookieConsentService } from 'ngx-cookieconsent';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app',
@@ -14,7 +16,10 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
   private tabToIndex: { [id: string]: number } = {};
   private navRadios: HTMLInputElement[];
 
-  constructor(private element: ElementRef<HTMLElement>) { }
+  constructor(
+    private element: ElementRef<HTMLElement>,
+    private ccService: NgcCookieConsentService
+  ) { }
 
   ngAfterViewInit(): void {
 
@@ -46,7 +51,7 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
     if (targetParent instanceof HTMLLabelElement) {
 
       const index = this.tabToIndex[targetParent.htmlFor];
-      
+
       this.moveGlider(index);
 
     }

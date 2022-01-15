@@ -2,8 +2,6 @@
 @use "../../css/shared.scss";
 
 #skills {
-    background-color: colors.$mirage;
-
     &-content {
         display: grid;
         grid-template-columns: repeat(3, auto);
@@ -24,7 +22,7 @@ nav {
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
-    border-bottom: 1px solid colors.$mischka;
+    border-bottom: 1px solid var(--skills-tab-border);
     border-top-left-radius: 0.25rem; //to eliminate the corners from going from sharp to rounded during transition
     border-top-right-radius: 0.25rem;
     padding: 0.5rem 1rem;
@@ -34,15 +32,15 @@ nav {
     flex-basis: 0; //make navtabs same width as each other
     cursor: pointer;
     transition: all 250ms;
-    color: colors.$polo-blue;
+    color: var(--skills-tab-unfocused);
 
     &:hover,
     &-active {
-        border: 1px solid colors.$mischka;
+        border: 1px solid var(--skills-tab-border);
         border-top-left-radius: 0.25rem;
         border-top-right-radius: 0.25rem;
-        box-shadow: 3px -3px 4px -2px colors.$polo-blue, -3px -3px 4px -2px colors.$polo-blue;
-        color: colors.$mischka;
+        box-shadow: 3px -3px 4px -2px var(--skills-tab-box-shadow), -3px -3px 4px -2px var(--skills-tab-box-shadow);
+        color: var(--skills-tab-focused);
     }
 
     &-active#{&}:hover {
@@ -61,7 +59,7 @@ nav {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    color: colors.$di-serria;
+    color: var(--skills-name);
     // border-width: 1px;
     // border-style: solid;
     // border-color: colors.$mischka;

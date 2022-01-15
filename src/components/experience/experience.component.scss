@@ -29,15 +29,15 @@ nav {
     padding-right: 0.9rem;
     list-style-type: none;
     font-size: 1rem;
-    border-left: $glider-width solid colors.$picked-bluewood;
+    border-left: $glider-width solid var(--experience-glider-background);
     cursor: pointer;
-    color: colors.$polo-blue;
+    color: var(--experience-tab-unfocused);
     transition: all 250ms;
 
     &-active,
     &:hover {
-        color: colors.$mischka;
-        background-color: #333c51ad;
+        color: var(--experience-tab-focused);
+        background-color: var(--experience-tab-hover);
     }
 }
 
@@ -48,8 +48,8 @@ nav {
     z-index: 2;
     height: $nav-tab-height;
     width: $glider-width;
-    background-color: colors.$mischka;
-    box-shadow: -2px 0px 5px colors.$polo-blue;
+    background-color: var(--experience-glider);
+    box-shadow: -2px 0px 5px var(--experience-glider-highlight);
     transition: transform 250ms cubic-bezier(0.645, 0.045, 0.355, 1),
         box-shadow 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -64,13 +64,13 @@ nav {
         justify-content: space-between;
         margin-bottom: 0.3rem;
         font-weight: 500;
-        color: colors.$di-serria;
+        color: var(--experience-employer);
 
         > span {
             font-style: normal;
             font-weight: 200;
             font-size: 0.95rem;
-            color: colors.$mischka;
+            color: var(--experience-when);
         }
     }
 
@@ -79,12 +79,14 @@ nav {
         font-style: normal;
         font-weight: 200;
         font-size: 0.95rem;
+        color: var(--experience-position);
     }
 
     > div > ul {
         margin-left: 1.2rem;
         list-style-position: outside;
-        color: colors.$polo-blue;
+        list-style-type: var(--experience-bullet);
+        color: var(--experience-info);
 
         > li {
             line-height: 1.5rem;
@@ -94,7 +96,7 @@ nav {
             }
 
             &::marker {
-                color: colors.$di-serria;
+                color: var(--experience-bullet-color);
             }
         }
     }

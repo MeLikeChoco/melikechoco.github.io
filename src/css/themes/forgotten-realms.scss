@@ -1,0 +1,153 @@
+@use "sass:color";
+
+$blackstar: #0d0d0d;
+$plantation: #274040;
+$cascade: #85a6a0;
+$sage: #93ab87;
+$winter-hazel: #d9d5a0;
+$gray-asparagus: #405942;
+$desert-storm: #f2f2f0;
+$pewter-blue: #8bb5b3;
+$zest: #de8921;
+$corduroy: #66736c;
+$cape-cod: #354842;
+$dark-khaki: #b6af49;
+$bunker: #132020;
+
+:root {
+    --default-text: #{$winter-hazel};
+    --default-background: #{$plantation};
+    --generic-button-border: #{$winter-hazel};
+    --generic-button-text: #{$winter-hazel};
+    --generic-button-hover-background: #{$cape-cod};
+    --generic-button-hover-text: #{$dark-khaki};
+
+    --scrollbar-thumb: #{$winter-hazel};
+    --scrollbar-background: #{$corduroy};
+
+    --nav-background: #{$bunker};
+    --nav-border: #{$gray-asparagus};
+    --nav-text: #{$winter-hazel};
+
+    --theme-selector-background: #{$bunker};
+    --theme-selector-text: #{$winter-hazel};
+
+    --intro-background-image: url(https://images2.alphacoders.com/716/716426.jpg);
+    --intro-background-color: #{color.adjust($gray-asparagus, $alpha: -0.4)};
+    --intro-title-blinking-caret: #{$winter-hazel};
+    --intro-links: #{$winter-hazel};
+    --intro-links-hover: #{$cascade};
+
+    --section-background: #{$plantation};
+    --section-background-alt: #{color.adjust($plantation, $lightness: 4%)};
+
+    --skills-tab-focused: #{$winter-hazel};
+    --skills-tab-unfocused: #{$sage};
+    --skills-tab-border: #{$winter-hazel};
+    --skills-tab-box-shadow: #{$sage};
+    --skills-name: #{$zest};
+
+    --experience-glider: #{$winter-hazel};
+    --experience-glider-background: #{color.adjust($cape-cod, $lightness: -3%)};
+    --experience-glider-highlight: #{$sage};
+    --experience-tab-focused: #{$winter-hazel};
+    --experience-tab-unfocused: #{$sage};
+    --experience-tab-hover: #{color.adjust($pewter-blue, $alpha: -0.82)};
+    --experience-employer: #{$zest};
+    --experience-position: #{$winter-hazel};
+    --experience-when: #{$winter-hazel};
+    --experience-bullet-color: #{$zest};
+    --experience-info: #{$sage};
+
+    --projects-border: #{$winter-hazel};
+    --projects-box-shadow: #{color.adjust($sage, $alpha: -0.85)};
+    --projects-name: #{$zest};
+    --projects-description: #{$sage};
+    --projects-links-border: #{$winter-hazel};
+    --projects-links-text: #{$winter-hazel};
+    --projects-links-hover-background: #{$cape-cod};
+    --projects-links-hover-text: #{$zest};
+    --projects-languages: #{$sage};
+    --projects-stars-icon: #{$zest};
+    --projects-stars-text: #{$winter-hazel};
+    --projects-stars-count-background: #{$cape-cod};
+    --projects-stars-count: #{$zest};
+    --projects-updated-at: #{$dark-khaki};
+
+    --about-me-description: #{$sage};
+    --about-me-contact-me-border: #{$winter-hazel};
+    --about-me-contact-me-text: #{$winter-hazel};
+    --about-me-contact-me-hover-background: #{$cape-cod};
+    --about-me-contact-me-hover-text: #{$zest};
+}
+
+// :root {
+//     --default-text: #{$mischka};
+//     --default-background: #{$mirage};
+
+//     --scrollbar-thumb: #{$mischka};
+//     --scrollbar-background: #{$elm};
+
+//     --nav-background: #{$firefly};
+//     --nav-border: #{$east-bay};
+//     --nav-text: #{$mischka};
+//     --nav-glider: #{$east-bay};
+
+//     --theme-selector-background: #{$firefly};
+//     --theme-selector-text: #{$mischka};
+
+//     --intro-background-image: url(https://images.alphacoders.com/855/855864.png);
+//     --intro-background-color: #{color.adjust($dark-east-bay, $alpha: -0.20)};
+//     --intro-title: #{$mischka};
+//     --intro-title-blinking-caret: #{$mischka};
+//     --intro-subtitle: #{$mischka};
+//     --intro-links: #{$mischka};
+//     --intro-links-hover: #{$ship-cove};
+
+//     --section-title: #{$mischka};
+//     --section-background: #{$mirage};
+//     --section-background-alt: #{$slightly-dark-east-bay};
+
+//     --skills-tab-focused: #{$mischka};
+//     --skills-tab-unfocused: #{$polo-blue};
+//     --skills-tab-border: #{$mischka};
+//     --skills-tab-box-shadow: #{$polo-blue};
+//     --skills-name: #{$di-serria};
+
+//     --experience-glider: #{$mischka};
+//     --experience-glider-background: #{$picked-bluewood};
+//     --experience-glider-highlight: #{$polo-blue};
+//     --experience-tab-focused: #{$mischka};
+//     --experience-tab-unfocused: #{$polo-blue};
+//     --experience-tab-hover: #{$oxford-blue-opacity};
+//     --experience-employer: #{$di-serria};
+//     --experience-position: #{$mischka};
+//     --experience-when: #{$mischka};
+//     --experience-bullet: "";
+//     --experience-bullet-color: #{$di-serria};
+//     --experience-info: #{$polo-blue};
+
+//     --projects-border: #{$mischka};
+//     --projects-box-shadow: #{color.adjust($polo-blue, $alpha: -0.85)};
+//     --projects-name: #{$di-serria};
+//     --projects-description: #{$polo-blue};
+//     --projects-links-border: #{$mischka};
+//     --projects-links-text: #{$mischka};
+//     --projects-links-hover-background: #{$picked-bluewood};
+//     --projects-links-hover-text: #{$di-serria};
+//     --projects-divider: #{$waikawa-gray};
+//     --projects-languages: #{$polo-blue};
+//     --projects-stars-icon: #{$di-serria};
+//     --projects-stars-text: #{$mischka};
+//     --projects-stars-count-background: #{$picked-bluewood};
+//     --projects-stars-count: #{$di-serria};
+//     --projects-updated-at: #{$ship-cove};
+
+//     --about-me-description: #{$polo-blue};
+//     --about-me-contact-me-border: #{$mischka};
+//     --about-me-contact-me-text: #{$mischka};
+//     --about-me-contact-me-hover-background: #{$picked-bluewood};
+//     --about-me-contact-me-hover-text: #{$di-serria};
+
+//     --footer-text: #{$mischka};
+// }

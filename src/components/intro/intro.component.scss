@@ -1,14 +1,15 @@
-@use '../../css/colors';
-@use 'sass:color';
+@use "../../css/colors";
+@use "sass:color";
 
 #intro {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    // background-color: #262626;
-    background-color: color.adjust(colors.$dark-east-bay, $lightness: -7%);
+    background: var(--intro-background-image);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    // background-position: center center;
 
     &::before {
         content: "";
@@ -17,10 +18,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background-image: url(https://images.alphacoders.com/855/855864.png);
-        background-size: cover;
-        opacity: 0.15;
-        z-index: 0;
+        background-color: var(--intro-background-color);
     }
 }
 
@@ -41,7 +39,8 @@
     font-weight: 500;
     font-size: 4rem;
     font-family: "Fira Code", monospace;
-    white-space: nowrap;
+    color: var(--intro-title);
+    // white-space: nowrap;
 
     &::after {
         content: "";
@@ -49,12 +48,13 @@
         top: 0;
         bottom: 0;
         width: 3px;
-        animation-name: blinking-caret;
-        animation-delay: 0ms;
-        animation-duration: 700ms;
-        animation-iteration-count: infinite;
+        animation: blinking-caret 700ms infinite;
         // animation-timing-function: step-end; //for a more "blinky" cursor that doesn't fade in and out
     }
+}
+
+#description {
+    color: var(--intro-subtitle);
 }
 
 @keyframes blinking-caret {
@@ -64,7 +64,7 @@
     }
 
     50% {
-        background-color: white;
+        background-color: var(--intro-title-blinking-caret);
     }
 }
 
@@ -80,10 +80,10 @@
 
 i {
     font-size: 3rem;
-    color: white;
+    color: var(--intro-links);
 
     &:hover {
-        color: colors.$ship-cove;
+        color: var(--intro-links-hover);
         transition-property: color;
         transition-duration: 300ms;
         transition-timing-function: ease;

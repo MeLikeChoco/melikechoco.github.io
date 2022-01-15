@@ -1,0 +1,25 @@
+@use "sass:color";
+
+$portage: #8da6f2;
+$lynch: #7c83a6;
+$tundora: #40383a;
+$link-water: #d5e5f2;
+$ronchi: #f2c84b;
+$tapestry: #bf6980;
+$tumbleweed: #d9ac84;
+
+:root {
+    --default-text: #{$tundora};
+
+    --intro-background-image: url(https://images3.alphacoders.com/703/703061.jpg);
+    --intro-background-color: #{color.adjust($tumbleweed, $alpha: -0.4)};
+    --intro-title: #{$tundora};
+    --intro-title-blinking-caret: #{$tundora};
+    --intro-subtitle: #{$tundora};
+    --intro-links: #{$tundora};
+    --intro-links-hover: #{$link-water};
+
+    --section-title: #{$tundora};
+    --section-background: #{$lynch};
+    --section-background-alt: #{$portage};
+}

@@ -1,0 +1,13 @@
+select {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 1.3rem 2rem;
+    padding: 0.3rem 0.625rem;
+    font-size: medium;
+    background-color: var(--theme-selector-background);
+    color: var(--theme-selector-text);
+    border-radius: 99rem;
+    z-index: 100;
+    // appearance: none;
+}

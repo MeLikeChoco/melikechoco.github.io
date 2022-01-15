@@ -30,9 +30,27 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/cookieconsent/build/cookieconsent.min.css",
+              {
+                "input": "src/css/themes/skyscraper.scss",
+                "inject": false,
+                "bundleName": "skyscraper"
+              },
+              {
+                "input": "src/css/themes/forgotten-realms.scss",
+                "inject": false,
+                "bundleName": "forgotten-realms"
+              },
+              {
+                "input": "src/css/themes/steampunk.scss",
+                "inject": false,
+                "bundleName": "steampunk"
+              }
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/cookieconsent/build/cookieconsent.min.js"
+            ],
             "allowedCommonJsDependencies": [
               "query-string"
             ]

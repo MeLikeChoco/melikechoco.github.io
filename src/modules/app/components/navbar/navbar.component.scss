@@ -1,0 +1,88 @@
+$glider-height: 2.3rem;
+$glider-width: 8rem;
+
+nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom: 0.5rem;
+    left: 2rem;
+    margin: 0 auto;
+    // margin: 1rem;
+    // padding: 0.3rem 1rem;
+    z-index: 100;
+    font-size: 1.3rem;
+    // background-color: var(--nav-background);
+    // border: 1px solid var(--nav-border);
+    // border-radius: 99rem;
+
+    > a {
+        transition: color 300ms ease;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        :hover {
+            color: var(--intro-links-hover);
+        }
+
+        > i {
+            font-size: 1.4rem;
+            color: var(--nav-text);
+        }
+    }
+
+    &::after {
+        content: "";
+        width: 1px;
+        height: 90px;
+        margin: auto;
+        margin-top: 1.25rem;
+        background-color: var(--nav-text);
+    }
+}
+
+// #nav-links {
+//     position: relative;
+//     display: flex;
+
+//     > input[type="radio"] {
+//         display: none;
+
+//         // &:checked + label > a {
+//         //     color: colors.$di-serria;
+//         // }
+//     }
+
+//     > label {
+//         height: $glider-height;
+//         width: $glider-width;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         cursor: pointer;
+
+//         > a {
+//             height: 100%;
+//             width: 100%;
+//             text-align: center;
+//             line-height: $glider-height;
+//             text-decoration: none;
+//             color: var(--nav-text);
+//             font-size: 1.3rem;
+//             transition: color 250ms  cubic-bezier(0.645, 0.045, 0.355, 1);
+//         }
+//     }
+
+//     &-glider {
+//         position: absolute;
+//         height: $glider-height;
+//         width: $glider-width;
+//         background-color: var(--nav-glider);
+//         border-radius: 99rem;
+//         z-index: 0;
+//         transition: transform 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
+//     }
+// }

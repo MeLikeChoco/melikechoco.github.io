@@ -1,0 +1,6 @@
+<section [id]="id" [ngClass]="useAltColor ? 'section-alt' : 'section'">
+    <div class="section-container">
+        <h2 class="section-title">{{title}}</h2>
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+    </div>
+</section>

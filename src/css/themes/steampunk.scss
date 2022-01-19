@@ -3,23 +3,86 @@
 $portage: #8da6f2;
 $lynch: #7c83a6;
 $tundora: #40383a;
+$don-juan: #594d4d;
+$dune: #372f2f;
 $link-water: #d5e5f2;
 $ronchi: #f2c84b;
 $tapestry: #bf6980;
 $tumbleweed: #d9ac84;
+$contessa: #c4816e;
 
 :root {
     --default-text: #{$tundora};
+    --default-background: #{$tundora};
+    --generic-button-border: #{$tumbleweed};
+    --generic-button-background: transparent;
+    --generic-button-text: #{$tumbleweed};
+    --generic-button-hover-border: inherit;
+    --generic-button-hover-background: #{$tapestry};
+    --generic-button-hover-text: #{$ronchi};
+
+    --scrollbar-thumb: #{$tumbleweed};
+    --scrollbar-background: #{$lynch};
+
+    --nav-background: #{$dune};
+    --nav-border: #{$link-water};
+    --nav-text: #{$tumbleweed};
+    
+    --theme-selector-background: #{$dune};
+    --theme-selector-text: #{$tumbleweed};
 
     --intro-background-image: url(https://images3.alphacoders.com/703/703061.jpg);
-    --intro-background-color: #{color.adjust($tumbleweed, $alpha: -0.4)};
-    --intro-title: #{$tundora};
-    --intro-title-blinking-caret: #{$tundora};
-    --intro-subtitle: #{$tundora};
-    --intro-links: #{$tundora};
-    --intro-links-hover: #{$link-water};
+    --intro-background-color: #{color.adjust($tundora, $alpha: -0.25)};
+    --intro-title: #{$tumbleweed};
+    --intro-title-blinking-caret: #{$tumbleweed};
+    --intro-subtitle: #{$tumbleweed};
+    --intro-links: #{$tumbleweed};
+    --intro-links-hover: #{$portage};
 
-    --section-title: #{$tundora};
-    --section-background: #{$lynch};
-    --section-background-alt: #{$portage};
+    --section-title: #{$tumbleweed};
+    --section-background: #{$tundora};
+    --section-background-alt: #{$don-juan};
+
+    --skills-tab-focused: #{$tumbleweed};
+    --skills-tab-unfocused: #{$ronchi};
+    --skills-tab-border: #{$tumbleweed};
+    --skills-tab-box-shadow: #{$ronchi};
+    --skills-name: #{$portage};
+
+    --experience-glider: #{$tumbleweed};
+    --experience-glider-background: #{$dune};
+    --experience-glider-highlight: #{$ronchi};
+    --experience-tab-focused: #{$tumbleweed};
+    --experience-tab-unfocused: #{$ronchi};
+    --experience-tab-hover: #{color.adjust($tumbleweed, $alpha: -0.8)};
+    --experience-employer: #{$portage};
+    --experience-position: #{$tumbleweed};
+    --experience-when: #{$tumbleweed};
+    --experience-bullet: disc;
+    --experience-bullet-color: #{$tapestry};
+    --experience-info: #{$ronchi};
+
+    --projects-border: #{$tumbleweed};
+    --projects-box-shadow: #{color.adjust($ronchi, $alpha: -0.85)};
+    --projects-name: #{$portage};
+    --projects-description: #{$ronchi};
+    --projects-links-border: var(--generic-button-border);
+    --projects-links-text: var(--generic-button-text);
+    --projects-links-hover-background: var(--generic-button-hover-background);
+    --projects-links-hover-text: var(--generic-button-hover-text);
+    --projects-divider: #{$contessa};
+    --projects-languages: #{$ronchi};
+    --projects-stars-icon: #{$portage};
+    --projects-stars-text: #{$tumbleweed};
+    --projects-stars-count-background: #{$dune};
+    --projects-stars-count: #{$portage};
+    --projects-updated-at: #{$tapestry};
+
+    --about-me-description: #{$ronchi};
+    --about-me-contact-me-border: var(--generic-button-border);
+    --about-me-contact-me-text: var(--generic-button-text);
+    --about-me-contact-me-hover-background: var(--generic-button-hover-background);
+    --about-me-contact-me-hover-text: var(--generic-button-hover-text);
+
+    --footer-text: #{$ronchi};
 }

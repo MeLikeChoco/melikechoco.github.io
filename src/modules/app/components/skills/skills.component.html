@@ -1,0 +1,41 @@
+<nav role="tablist">
+    <span class="navtab" [ngClass]="{'navtab-active': enableLanguages}"
+        (click)="enableLanguages = true; enableFrameworks = false; enableOthers = false" role="tab">
+        Languages</span>
+    <span class="navtab" [ngClass]="{'navtab-active': enableFrameworks}"
+        (click)="enableLanguages = false; enableFrameworks = true; enableOthers = false" role="tab">
+        Frameworks</span>
+    <span class="navtab" [ngClass]="{'navtab-active': enableOthers}"
+        (click)="enableLanguages = false; enableFrameworks = false; enableOthers = true" role="tab">
+        Technologies / Other</span>
+</nav>
+<div>
+    <!-- <ng-template ngFor let-language [ngForOf]="skills.languages" let-i="index">
+            <div class="skill-card" [style.animation-delay]="(100 * i) + 'ms'" in-view (inView)="animateSkill($event)"
+                *ngIf="enableLanguages">
+                <img src={{language.image}}>
+                <span>{{language.name}}</span>
+            </div>
+        </ng-template> -->
+    <div class="skills-content" [style.display]="enableLanguages ? null : 'none'">
+        <div class="skill-card" *ngFor="let language of skills.languages; index as i; trackBy: identify"
+            [style.animation-delay]="(100 * i) + 'ms'" in-view (inView)="animateSkill($event)">
+            <img height="80" src={{language.image}} [alt]="language.name">
+            <span>{{language.name}}</span>
+        </div>
+    </div>
+    <div class="skills-content" [style.display]="enableFrameworks ? null : 'none'">
+        <div class="skill-card" *ngFor="let framework of skills.frameworks; index as i; trackBy: identify"
+            [style.animation-delay]="(100 * i) + 'ms'" in-view (inView)="animateSkill($event)">
+            <img height="80" src={{framework.image}} [alt]="framework.name">
+            <span>{{framework.name}}</span>
+        </div>
+    </div>
+    <div class="skills-content" [style.display]="enableOthers ? null : 'none'">
+        <div class="skill-card" *ngFor="let others of skills.others; index as i; trackBy: identify"
+            [style.animation-delay]="(100 * i) + 'ms'" in-view (inView)="animateSkill($event)">
+            <img height="80" src={{others.image}} [alt]="others.name">
+            <span>{{others.name}}</span>
+        </div>
+    </div>
+</div>

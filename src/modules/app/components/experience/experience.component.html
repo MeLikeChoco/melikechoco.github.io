@@ -1,0 +1,29 @@
+<div id="experience-content">
+    <nav>
+        <ul>
+            <li class="navtab" *ngFor="let employer of employers; index as i"
+                [ngClass]="{'navtab-active': activeTab == i}" (click)="navtabClicked(i)">
+                {{employer}}
+            </li>
+        </ul>
+        <div #experienceNavGlider id="experience-nav-glider"></div>
+    </nav>
+    <div id="experience-info-container">
+        <ng-template ngFor let-experience [ngForOf]="experiences" let-i="index">
+            <div class="experience-info fade-in" *ngIf="activeTab == i">
+                <h3>
+                    {{experience.employer}}
+                    <span>{{experience.when}}</span>
+                </h3>
+                <h4>{{experience.title}}</h4>
+                <div>
+                    <ul>
+                        <li *ngFor="let info of experience.info; index as i">
+                            {{info}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

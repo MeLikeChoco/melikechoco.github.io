@@ -29,6 +29,14 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "optimization": {
+              "scripts": true,
+              "fonts": true,
+              "styles": {
+                "minify": true,
+                "inlineCritical": false
+              }
+            },
             "styles": [
               "src/styles.scss",
               "node_modules/cookieconsent/build/cookieconsent.min.css",
@@ -57,14 +65,6 @@
           },
           "configurations": {
             "production": {
-              "optimization": {
-                "scripts": true,
-                "fonts": true,
-                "styles": {
-                  "minify": true,
-                  "inlineCritical": false
-                }
-              },
               "budgets": [
                 {
                   "type": "initial",
@@ -87,14 +87,6 @@
             },
             "development": {
               "buildOptimizer": false,
-              "optimization": {
-                "scripts": true,
-                "fonts": true,
-                "styles": {
-                  "minify": true,
-                  "inlineCritical": false
-                }
-              },
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,

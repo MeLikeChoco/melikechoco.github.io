@@ -25,6 +25,7 @@ import { ThemesService } from 'src/services/themes/themes.service';
 import { NavbarComponent } from 'src/modules/app/components/navbar/navbar.component';
 import { SectionModule } from '../section/section.module';
 import { KeyValueKeepOrderPipe } from 'src/pipes/keyValueKeepOrder/key-value-keep-order.pipe';
+import { TooltipModule } from '../tooltip/tooltip.module';
 
 const cookieConsentConfig: NgcCookieConsentConfig = {
   "cookie": {
@@ -78,7 +79,8 @@ const cookieConsentConfig: NgcCookieConsentConfig = {
     FormsModule,
     HttpClientModule,
     NgcCookieConsentModule.forRoot(cookieConsentConfig),
-    SectionModule
+    SectionModule,
+    TooltipModule
   ],
   providers: [
     GithubService,

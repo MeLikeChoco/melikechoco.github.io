@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit, TemplateRef } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'app-section',

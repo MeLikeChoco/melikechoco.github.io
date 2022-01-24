@@ -1,46 +1,49 @@
 $glider-height: 2.3rem;
 $glider-width: 8rem;
 
-nav {
+#navigation {
     position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     bottom: 0.5rem;
     left: 2rem;
-    margin: 0 auto;
-    // margin: 1rem;
-    // padding: 0.3rem 1rem;
     z-index: 100;
-    font-size: 1.3rem;
-    // background-color: var(--nav-background);
-    // border: 1px solid var(--nav-border);
-    // border-radius: 99rem;
 
-    > a {
-        transition: color 300ms ease;
+    > nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        // margin: 1rem;
+        // padding: 0.3rem 1rem;
+        font-size: 1.3rem;
+        // background-color: var(--nav-background);
+        // border: 1px solid var(--nav-border);
+        // border-radius: 99rem;
 
-        &:not(:last-child) {
-            margin-bottom: 1rem;
+        > a {
+            transition: color 300ms ease;
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+
+            :hover {
+                color: var(--intro-links-hover);
+            }
+
+            > i {
+                font-size: 1.4rem;
+                color: var(--nav-text);
+            }
         }
 
-        :hover {
-            color: var(--intro-links-hover);
+        &::after {
+            content: "";
+            width: 1px;
+            height: 90px;
+            margin: auto;
+            margin-top: 1.25rem;
+            background-color: var(--nav-text);
         }
-
-        > i {
-            font-size: 1.4rem;
-            color: var(--nav-text);
-        }
-    }
-
-    &::after {
-        content: "";
-        width: 1px;
-        height: 90px;
-        margin: auto;
-        margin-top: 1.25rem;
-        background-color: var(--nav-text);
     }
 }
 

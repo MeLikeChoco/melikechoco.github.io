@@ -68,12 +68,13 @@
 }
 
 #links {
-    align-items: center;
+    display: flex;
     justify-content: center;
-    text-align: center;
 
-    > a:not(:last-child) {
-        margin-right: 1rem;
+    > a {
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
     }
 }
 

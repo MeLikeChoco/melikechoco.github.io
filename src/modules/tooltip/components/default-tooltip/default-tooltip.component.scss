@@ -1,0 +1,59 @@
+:host {
+    position: fixed;
+
+    > .default-tooltip {
+        border-radius: 5px;
+        padding: 5px;
+        background-color: var(--default-text);
+        color: var(--default-background);
+    }
+
+    & * {
+        font-size: 1rem;
+    }
+
+    &[class*="tooltip-top"]::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        // border: 5px solid transparent;
+        border-color: var(--default-text) transparent transparent transparent;
+        border-width: 5px;
+        border-style: solid;
+    }
+
+    &[class*="tooltip-right"]::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin-top: -5px;
+        border-color: transparent var(--default-text) transparent transparent;
+        border-width: 5px;
+        border-style: solid;
+    }
+
+    &[class*="tooltip-bottom"]::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-color: transparent transparent var(--default-text) transparent;
+        border-width: 5px;
+        border-style: solid;
+    }
+
+    &[class*="tooltip-left"]::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -5px;
+        border-color: transparent transparent transparent var(--default-text);
+        border-width: 5px;
+        border-style: solid;
+    }
+}

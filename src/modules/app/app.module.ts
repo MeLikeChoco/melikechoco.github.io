@@ -12,7 +12,7 @@ import { AppFooterComponent } from 'src/modules/app/components/footer/app-footer
 import { InViewDirective } from 'src/modules/app/directives/in-view/in-view.directive';
 import { ExperienceComponent } from 'src/modules/app/components/experience/experience.component';
 import { ProjectsComponent } from 'src/modules/app/components/projects/projects.component';
-import { GithubService } from 'src/services/github-service/github.service';
+import { GithubService } from 'src/modules/app/services/github-service/github.service';
 import { LoadingDirective } from 'src/modules/app/directives/loading/loading.directive';
 import { LetDirective } from 'src/modules/app/directives/let/let.directive';
 import { AboutMeComponent } from 'src/modules/app/components/about-me/about-me.component';
@@ -21,7 +21,7 @@ import { StylesheetDirective } from 'src/modules/app/directives/stylesheet/style
 import { SafePipe } from 'src/pipes/safe/safe.pipe';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
-import { ThemesService } from 'src/services/themes/themes.service';
+import { ThemesService } from 'src/modules/app/services/themes/themes.service';
 import { NavbarComponent } from 'src/modules/app/components/navbar/navbar.component';
 import { SectionModule } from '../section/section.module';
 import { KeyValueKeepOrderPipe } from 'src/pipes/keyValueKeepOrder/key-value-keep-order.pipe';

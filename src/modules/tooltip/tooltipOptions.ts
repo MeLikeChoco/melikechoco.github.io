@@ -11,7 +11,7 @@ export type TooltipOptions = {
 export function getDefaultTooltipOptions(): TooltipOptions {
     return {
         position: 'top',
-        delay: 0,
+        delay: 100,
         offsetInPx: 10
     }
 }

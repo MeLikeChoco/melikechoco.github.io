@@ -1,0 +1,7 @@
+<div class="tooltip-hide" *ngIf="inputIsTemplate() else defaultTooltipTemplate">
+    <ng-container [ngTemplateOutlet]="inputAsTemplate"></ng-container>
+</div>
+
+<ng-template #defaultTooltipTemplate>
+    <div class="default-tooltip tooltip-hide" [innerHtml]="input"></div>
+</ng-template>

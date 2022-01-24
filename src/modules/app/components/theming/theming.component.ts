@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgcCookieConsentService } from 'ngx-cookieconsent';
 import { Subscription } from 'rxjs';
-import { ThemesService } from 'src/services/themes/themes.service';
+import { ThemesService } from 'src/modules/app/services/themes/themes.service';
 
 @Component({
   selector: 'theming',
@@ -12,16 +12,16 @@ export class ThemingComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('themeSelection') themeSelection: ElementRef<HTMLSelectElement>
 
-  themesService: ThemesService;
+  get themesService() {
+    return this._themesService;
+  }
 
   private _onConsentSub$: Subscription
 
   constructor(
     private _ccService: NgcCookieConsentService,
     private _themesService: ThemesService
-  ) {
-    this.themesService = _themesService;
-  }
+  ) { }
 
   ngOnInit(): void {
 

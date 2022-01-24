@@ -1,5 +1,5 @@
 import { ComponentRef, Directive, ElementRef, EmbeddedViewRef, HostListener, Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
-import { DefaultTooltipComponent } from '../../components/default-tooltip/default-tooltip.component';
+import { TooltipComponent } from '../../components/tooltip/tooltip.component';
 import { TooltipService } from '../../services/tooltip/tooltip-service.service';
 import { getDefaultTooltipOptions, TooltipOptions, TooltipPosition } from '../../tooltipOptions';
 
@@ -47,7 +47,7 @@ export class TooltipDirective implements OnInit, OnDestroy {
     return this.options.offsetInPx;
   }
 
-  private _tooltipElement: ComponentRef<DefaultTooltipComponent> | EmbeddedViewRef<HTMLElement>;
+  private _tooltipElement: ComponentRef<TooltipComponent> | EmbeddedViewRef<HTMLElement>;
   private _tooltipOptions: TooltipOptions = getDefaultTooltipOptions();
 
   constructor(
@@ -82,7 +82,7 @@ export class TooltipDirective implements OnInit, OnDestroy {
 
     if (!this.content || typeof (this.content) === 'string') {
 
-      const defaultComponent = this._viewContainerRef.createComponent(DefaultTooltipComponent);
+      const defaultComponent = this._viewContainerRef.createComponent(TooltipComponent);
 
       if (!this.content)
         defaultComponent.instance.input = "This works!";

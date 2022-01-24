@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TooltipDirective } from 'src/modules/tooltip/directives/tooltip/tooltip.directive';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
-import { DefaultTooltipComponent } from './components/default-tooltip/default-tooltip.component';
 import { TooltipService } from './services/tooltip/tooltip-service.service';
 
 
@@ -10,8 +9,7 @@ import { TooltipService } from './services/tooltip/tooltip-service.service';
 @NgModule({
   declarations: [
     TooltipDirective,
-    TooltipComponent,
-    DefaultTooltipComponent
+    TooltipComponent
   ],
   imports: [
     CommonModule

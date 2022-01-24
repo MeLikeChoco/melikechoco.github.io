@@ -30,6 +30,7 @@ nav {
     cursor: pointer;
     transition: all 250ms;
     color: var(--skills-tab-unfocused);
+    user-select: none;
 
     &:hover,
     &-active {

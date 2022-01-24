@@ -64,6 +64,7 @@ export class TooltipService {
       toolTipStyle.left = `${horizontalPos}px`;
 
       tooltipElement.classList.add(`tooltip-${options.position}`);
+      tooltipElement.classList.add('tooltip-show');
 
     }, options.delay);
 

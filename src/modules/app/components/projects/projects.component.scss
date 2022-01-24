@@ -60,6 +60,7 @@ a {
         color: var(--projects-links-text);
         border: 1px solid var(--projects-links-border);
         border-radius: 5px;
+        user-select: none;
 
         &:not(:last-child) {
             margin-right: 1rem;

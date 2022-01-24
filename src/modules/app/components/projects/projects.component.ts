@@ -1,7 +1,7 @@
 import { KeyValue } from '@angular/common';
 import { AfterContentChecked, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Observable, take } from 'rxjs';
-import { GithubService } from 'src/services/github-service/github.service';
+import { GithubService } from 'src/modules/app/services/github-service/github.service';
 import { GithubRepo } from '../../../../types/github-types';
 import repos from '../../../../assets/repos.json';
 

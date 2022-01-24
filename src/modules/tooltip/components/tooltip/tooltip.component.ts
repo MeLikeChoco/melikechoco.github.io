@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'tooltip',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TooltipComponent implements OnInit {
 
-  constructor() { }
+  input: string | TemplateRef<any>;
 
-  ngOnInit(): void {
+  get tooltipElement() {
+    return this._tooltipEleRef.nativeElement;
+  }
+
+  get inputAsTemplate() {
+    return this.input as TemplateRef<any>;
+  }
+
+  constructor(private _tooltipEleRef: ElementRef<HTMLDivElement>) { }
+
+  ngOnInit(): void { }
+
+  inputIsTemplate() {
+    return this.input instanceof TemplateRef;
   }
 
 }

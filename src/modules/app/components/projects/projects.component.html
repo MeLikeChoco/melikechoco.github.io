@@ -3,6 +3,11 @@
         <div class="project" *ngIf="repo$ | async as repo; else loading">
             <h3 class="project-name">{{repo.name}}</h3>
             <p class="project-description" *ngIf="repo.description">{{repo.description}}</p>
+            <ng-container *ngIf="repo.libs.length > 0">
+                <div class="project-libs">
+                    <span class="project-lib" *ngFor="let lib of repo.libs">{{lib}}</span>
+                </div>
+            </ng-container>
             <div class="project-links">
                 <a class="project-link" href={{repo.downloadUrl}}>
                     <i class="fab fa-github"></i>

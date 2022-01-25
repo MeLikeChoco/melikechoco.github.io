@@ -1,5 +1,25 @@
 [
-    "MeLikeChoco/YuGiOhBot",
-    "MeLikeChoco/Cellular-Automata",
-    "MeLikeChoco/melikechoco.github.io"
+    {
+        "url": "MeLikeChoco/YuGiOhBot",
+        "libs": [
+            ".NET Core",
+            "Discord.NET",
+            "Dapper",
+            "PostgreSQL",
+            "Anglesharp"
+        ]
+    },
+    {
+        "url": "MeLikeChoco/Cellular-Automata",
+        "libs": [
+            "Electron"
+        ]
+    },
+    {
+        "url": "MeLikeChoco/melikechoco.github.io",
+        "libs": [
+            "Angular",
+            "Sass"
+        ]
+    }
 ]

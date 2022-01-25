@@ -74,6 +74,7 @@ export class GithubService {
               name: repoResponse.name,
               description: repoResponse.description,
               languages: calcLangPercentages(langResponse),
+              libs: [],
               stargazersCount: repoResponse.stargazers_count,
               updatedAt: new Date(repoResponse.updated_at),
               repoUrl: urlJoin(baseUrl, repoUrl),

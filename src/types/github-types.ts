@@ -19,6 +19,7 @@ export type GithubRepo = {
     name: string;
     description: string;
     languages: GithubRepoLanguages;
+    libs: string[];
     stargazersCount: number;
     updatedAt: Date;
     repoUrl: string;

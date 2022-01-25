@@ -50,6 +50,24 @@ a {
         color: var(--projects-description);
     }
 
+    &-libs {
+        margin-bottom: 1rem;
+    }
+
+    &-lib {
+        display: inline-block;
+        border-radius: 3px;
+        font-size: 0.8rem;
+        font-weight: 300;
+        font-family: "Fira Code", monospace;
+        line-height: 1.5rem;
+        color: var(--projects-languages);
+
+        &:not(:last-child) {
+            margin-right: 1.5rem;
+        }
+    }
+
     &-links {
         margin-bottom: 1rem;
     }
@@ -83,6 +101,7 @@ a {
     }
 
     &-language {
+        display: inline-block;
         border-radius: 3px;
         font-size: 0.8rem;
         font-weight: 300;

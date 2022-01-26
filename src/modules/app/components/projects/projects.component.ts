@@ -2,7 +2,6 @@ import { KeyValue } from '@angular/common';
 import { AfterContentChecked, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { map, Observable, take } from 'rxjs';
 import { GithubService } from 'src/modules/app/services/github-service/github.service';
-import { GithubRepo } from '../../../../types/github-types';
 import repos from '../../../../assets/repos.json';
 
 @Component({
@@ -12,7 +11,7 @@ import repos from '../../../../assets/repos.json';
 })
 export class ProjectsComponent implements OnInit, AfterContentChecked {
 
-  githubRepos$: Observable<GithubRepo>[];
+  githubRepos$: Observable<any>[];
   randomHeights: number[];
 
   constructor(

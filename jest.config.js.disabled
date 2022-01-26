@@ -25,5 +25,5 @@ module.exports = {
         '<rootDir>/src/modules/*.spec.ts',
         '<rootDir>/src/modules/**/*.spec.ts'
     ]
-    
+
 };

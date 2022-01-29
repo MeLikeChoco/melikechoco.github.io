@@ -21,9 +21,9 @@ module.exports = {
     globalSetup: 'jest-preset-angular/global-setup',
     
     collectCoverageFrom: [
-        '<rootDir>/src/modules/**/*.ts',
-        '!<rootDir>/src/modules/**/index.ts',
-        '!<rootDir>/src/modules/**/*.module.ts'
+        '<rootDir>/src/**/*.ts',
+        '!<rootDir>/src/**/index.ts',
+        '!<rootDir>/src/**/*.module.ts'
     ],
 
     coverageDirectory: 'coverage',
@@ -42,8 +42,8 @@ module.exports = {
     ],
 
     testMatch: [
-        '<rootDir>/src/modules/*.spec.ts',
-        '<rootDir>/src/modules/**/*.spec.ts'
+        '<rootDir>/src/*.spec.ts',
+        '<rootDir>/src/**/*.spec.ts'
     ]
 
 };

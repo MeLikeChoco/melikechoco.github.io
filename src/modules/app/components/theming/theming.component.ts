@@ -8,7 +8,7 @@ import { ThemesService } from 'src/modules/app/services/themes/themes.service';
   templateUrl: './theming.component.html',
   styleUrls: ['./theming.component.scss']
 })
-export class ThemingComponent implements OnInit, AfterViewInit, OnDestroy {
+export class ThemingComponent implements OnInit, OnDestroy {
 
   @ViewChild('themeSelection') themeSelection: ElementRef<HTMLSelectElement>
 
@@ -19,8 +19,8 @@ export class ThemingComponent implements OnInit, AfterViewInit, OnDestroy {
   private _onConsentSub$: Subscription
 
   constructor(
-    private _ccService: NgcCookieConsentService,
-    private _themesService: ThemesService
+    private _themesService: ThemesService,
+    private _ccService: NgcCookieConsentService
   ) { }
 
   ngOnInit(): void {
@@ -31,8 +31,17 @@ export class ThemingComponent implements OnInit, AfterViewInit, OnDestroy {
 
         switch (event.status) {
 
-          case 'allow':
-            this.initializeThemeChanging();
+          case 'dismiss':
+
+            if (this._ccService.hasConsented()) {
+
+              const selectedTheme = this.themeSelection.nativeElement.selectedOptions.item(0)?.value;
+
+              if (selectedTheme)
+                this._themesService.activeTheme = selectedTheme;
+
+            }
+
             break;
 
         }
@@ -43,19 +52,8 @@ export class ThemingComponent implements OnInit, AfterViewInit, OnDestroy {
 
   }
 
-  ngAfterViewInit(): void {
-
-    if (this._ccService.hasConsented())
-      this.initializeThemeChanging();
-
-  }
-
   ngOnDestroy(): void {
     this._onConsentSub$?.unsubscribe();
-  }
-
-  initializeThemeChanging() {
-    this.themeSelection.nativeElement.addEventListener('change', (ev) => this.themesService.changeTheme(ev));
   }
 
   preserveOrder() {

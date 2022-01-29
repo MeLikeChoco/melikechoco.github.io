@@ -22,7 +22,7 @@
             <ng-container *ngIf="(repo.languages | keyvalue)?.length">
                 <div class="project-languages">
                     <span class="project-language"
-                        *ngFor="let language of repo.languages | keyvalue: dummyFunctionToPreserveOrder">
+                        *ngFor="let language of repo.languages | keyvalueKeepOrder">
                         {{language.key}}: {{language.value}}%
                     </span>
                 </div>

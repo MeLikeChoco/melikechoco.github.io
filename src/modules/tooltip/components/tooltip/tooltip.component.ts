@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, TemplateRef } from '@angular/core';
+import { DefaultTooltipContent } from '../../tooltipOptions';
 
 @Component({
   selector: 'tooltip',
@@ -17,7 +18,9 @@ export class TooltipComponent implements OnInit {
     return this.input as TemplateRef<any>;
   }
 
-  constructor(private _tooltipEleRef: ElementRef<HTMLDivElement>) { }
+  constructor(private _tooltipEleRef: ElementRef<HTMLDivElement>) {
+    this.input = DefaultTooltipContent;
+  }
 
   ngOnInit(): void { }
 

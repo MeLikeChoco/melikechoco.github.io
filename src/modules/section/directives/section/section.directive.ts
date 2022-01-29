@@ -6,25 +6,64 @@ import { SectionComponent } from 'src/modules/section/components/section/section
 })
 export class SectionDirective implements OnInit {
 
-  @Input() sectionUseAltColor = false;
-  @Input() sectionId: string;
-  @Input() sectionTitle: string;
+  @Input('sectionUseAltColor')
+  set useAltColor(input: boolean) {
 
-  private sectionRef: ComponentRef<SectionComponent>;
+    this._useAltColor = input;
+
+    if (this.sectionRef)
+      this.sectionRef.instance.useAltColor = input;
+
+  }
+  get useAltColor() {
+    return this._useAltColor;
+  }
+
+  @Input('sectionId')
+  set id(input: string) {
+
+    this._id = input;
+
+    if (this.sectionRef)
+      this.sectionRef.instance.id = input;
+
+  }
+  get id() {
+    return this._id;
+  }
+
+  @Input('sectionTitle')
+  set sectionTitle(input: string) {
+
+    this._title = input;
+
+    if (this.sectionRef)
+      this.sectionRef.instance.title = input;
+
+  }
+  get sectionTitle() {
+    return this._title;
+  }
+
+  sectionRef: ComponentRef<SectionComponent>;
+
+  private _useAltColor = false;
+  private _id: string;
+  private _title = 'Title';
 
   constructor(
-    private contentRef: TemplateRef<any>,
-    private viewContainerRef: ViewContainerRef,
+    private _contentRef: TemplateRef<any>,
+    private _viewContainerRef: ViewContainerRef,
   ) { }
 
   ngOnInit(): void {
 
-    this.sectionRef = this.viewContainerRef.createComponent(SectionComponent);
+    this.sectionRef = this._viewContainerRef.createComponent(SectionComponent);
     const instance = this.sectionRef.instance;
-    instance.content = this.contentRef;
-    instance.useAltColor = this.sectionUseAltColor;
-    instance.id = this.sectionId;
-    instance.title = this.sectionTitle;
+    instance.content = this._contentRef;
+    instance.useAltColor = this._useAltColor;
+    instance.id = this._id;
+    instance.title = this._title;
 
   }
 

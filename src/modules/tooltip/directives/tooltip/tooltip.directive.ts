@@ -1,7 +1,6 @@
 import { ComponentRef, Directive, ElementRef, EmbeddedViewRef, HostListener, Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
 import { TooltipComponent } from '../../components/tooltip/tooltip.component';
-import { TooltipService } from '../../services/tooltip/tooltip-service.service';
-import { getDefaultTooltipOptions, TooltipOptions, TooltipPosition } from '../../tooltipOptions';
+import { DefaultTooltipContent, getDefaultTooltipOptions, TooltipOptions, TooltipPosition } from '../../tooltipOptions';
 
 @Directive({
   selector: '[tooltip]'
@@ -47,13 +46,16 @@ export class TooltipDirective implements OnInit, OnDestroy {
     return this.options.offsetInPx;
   }
 
+  get elementRef() {
+    return this._elementRef;
+  }
+
   private _tooltipElement: ComponentRef<TooltipComponent> | EmbeddedViewRef<HTMLElement>;
   private _tooltipOptions: TooltipOptions = getDefaultTooltipOptions();
 
   constructor(
     private _elementRef: ElementRef<HTMLElement>,
-    private _viewContainerRef: ViewContainerRef,
-    private _tooltipService: TooltipService
+    private _viewContainerRef: ViewContainerRef
   ) { }
 
   ngOnInit(): void { }
@@ -84,9 +86,7 @@ export class TooltipDirective implements OnInit, OnDestroy {
 
       const defaultComponent = this._viewContainerRef.createComponent(TooltipComponent);
 
-      if (!this.content)
-        defaultComponent.instance.input = "This works!";
-      else
+      if (this.content)
         defaultComponent.instance.input = this.content;
 
       this._tooltipElement = defaultComponent;
@@ -103,14 +103,69 @@ export class TooltipDirective implements OnInit, OnDestroy {
 
   private setupToolTip() {
 
+    const element = this._elementRef.nativeElement;
     const tooltipElement = this._tooltipElement instanceof ComponentRef ?
       this._tooltipElement.instance.tooltipElement : this._tooltipElement.context;
 
-    this._tooltipService.setPosition(
-      this._elementRef.nativeElement,
-      tooltipElement,
-      this.options
-    );
+    setTimeout(() => {
+
+      const elementRect = element.getBoundingClientRect();
+      const toolTipRect = tooltipElement.getBoundingClientRect();
+      const toolTipStyle = tooltipElement.style;
+
+      let verticalPos: number, horizontalPos: number;
+      verticalPos = horizontalPos = 0;
+
+      switch (this.options.position) {
+
+        case 'top': {
+
+          verticalPos = elementRect.top - toolTipRect.height - this.options.offsetInPx;
+          horizontalPos = elementRect.left + (elementRect.width - toolTipRect.width) / 2;
+
+          break;
+
+        }
+        case 'right': {
+
+          verticalPos = elementRect.top + (elementRect.height - toolTipRect.height) / 2;
+          horizontalPos = elementRect.left + elementRect.width + this.options.offsetInPx;
+
+          break;
+
+        }
+        case 'bottom': {
+
+          verticalPos = elementRect.top + elementRect.height + this.options.offsetInPx;
+          horizontalPos = elementRect.left + (elementRect.width - toolTipRect.width) / 2;
+
+          break;
+
+        }
+        case 'left': {
+
+          verticalPos = elementRect.top + (elementRect.height - toolTipRect.height) / 2;
+          horizontalPos = elementRect.left - toolTipRect.width - this.options.offsetInPx;
+
+          break;
+
+        }
+
+      }
+
+      toolTipStyle.top = `${verticalPos}px`;
+      toolTipStyle.left = `${horizontalPos}px`;
+
+      tooltipElement.classList.add(`tooltip-${this.options.position}`);
+      tooltipElement.classList.add('tooltip-show');
+
+    }, this.options.delay);
+
+    // this._tooltipService.setPosition(
+    //   this._elementRef.nativeElement,
+    //   tooltipElement,
+    //   this.options
+    // );
 
   }
 

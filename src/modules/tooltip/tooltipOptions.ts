@@ -15,3 +15,5 @@ export function getDefaultTooltipOptions(): TooltipOptions {
         offsetInPx: 10
     }
 }
+
+export const DefaultTooltipContent = 'This works!';

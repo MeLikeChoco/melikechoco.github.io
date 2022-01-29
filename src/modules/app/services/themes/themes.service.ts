@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { NgcCookieConsentService } from 'ngx-cookieconsent';
 import themes from 'src/assets/themes.json';
 
 const themeKey = 'theme';
@@ -10,30 +11,39 @@ const themeKey = 'theme';
 export class ThemesService {
 
   private _themeKeys = Object.keys(themes);
+  private _activeTheme: string;
 
   themes = themes;
-  activeTheme: string;
 
-  constructor(private cookieService: CookieService) {
+  get activeTheme() {
+    return this._activeTheme;
+  }
 
-    this.activeTheme = cookieService.get(themeKey);
+  set activeTheme(theme: string) {
 
-    if (this.activeTheme === '')
-      this.activeTheme = this._themeKeys[0];
+    if (this._themeKeys.includes(theme)) {
+
+      this._activeTheme = theme;
+
+      if (this._ccService.hasConsented())
+        this._cookieService.set(themeKey, theme);
+
+    } else
+      throw new Error(`${theme} is not a valid theme key, check themes to make sure they match.`);
 
   }
 
-  changeTheme(event: Event) {
+  constructor(
+    private _cookieService: CookieService,
+    private _ccService: NgcCookieConsentService
+  ) {
 
-    const selectElement = event.target;
+    let theme = _cookieService.get(themeKey);
 
-    if (selectElement && selectElement instanceof HTMLSelectElement) {
+    if (theme === '')
+      theme = this._themeKeys[0];
 
-      const activeTheme = this._themeKeys[selectElement.selectedIndex];
-
-      this.cookieService.set(themeKey, activeTheme);
-
-    }
+    this._activeTheme = theme;
 
   }
 

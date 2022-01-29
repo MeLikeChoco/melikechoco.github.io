@@ -1,6 +1,5 @@
 <select #themeSelection [(ngModel)]="themesService.activeTheme">
-    <option *ngFor="let theme of themesService.themes | keyvalueKeepOrder; index as i" value={{theme.key}}
-        [ngValue]="theme.key">
+    <option *ngFor="let theme of themesService.themes | keyvalueKeepOrder; index as i" [value]="theme.key">
         {{theme.value}}
         <link [href]="theme.key + '.css' | safe" *ngIf="theme.key == themesService.activeTheme" stylesheet>
     </option>

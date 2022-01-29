@@ -1,9 +1,7 @@
-import { environment } from 'src/environments/environment';
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { NgcCookieConsentModule, NgcCookieConsentConfig } from 'ngx-cookieconsent';
+import { NgcCookieConsentModule } from 'ngx-cookieconsent';
 
 import { AppComponent } from './components/app/app.component';
 import { IntroComponent } from 'src/modules/app/components/intro/intro.component';
@@ -26,35 +24,7 @@ import { NavbarComponent } from 'src/modules/app/components/navbar/navbar.compon
 import { SectionModule } from '../section/section.module';
 import { KeyValueKeepOrderPipe } from 'src/pipes/keyValueKeepOrder/key-value-keep-order.pipe';
 import { TooltipModule } from '../tooltip/tooltip.module';
-
-const cookieConsentConfig: NgcCookieConsentConfig = {
-  "cookie": {
-    "domain": environment.production ? "melikechoco.github.io" : "localhost"
-  },
-  "position": "bottom-left",
-  "theme": "classic",
-  "palette": {
-    "popup": {
-      "background": "#000000",
-      "text": "#ffffff",
-      "link": "#ffffff"
-    },
-    "button": {
-      "background": "#f1d600",
-      "text": "#000000",
-      "border": "transparent"
-    }
-  },
-  "type": "info",
-  "content": {
-    "message": "The only cookie we use is for site theming purposes.",
-    "dismiss": "Got it!",
-    "deny": "Refuse cookies",
-    "link": "Learn more",
-    "href": "https://cookiesandyou.com",
-    "policy": "Cookie Policy"
-  }
-};
+import { cookieConsentConfig } from 'src/misc';
 
 @NgModule({
   declarations: [

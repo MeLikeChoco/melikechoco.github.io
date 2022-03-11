@@ -19,7 +19,9 @@
         "url": "MeLikeChoco/melikechoco.github.io",
         "libs": [
             "Angular",
-            "Sass"
+            "Sass",
+            "Jasmine",
+            "Jest"
         ]
     }
 ]

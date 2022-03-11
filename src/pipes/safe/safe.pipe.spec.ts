@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { SafePipe } from './safe.pipe';
 
 describe('SafePipe', () => {

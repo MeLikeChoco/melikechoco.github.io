@@ -191,14 +191,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/animations@npm:~13.1.0":
-  version: 13.1.3
-  resolution: "@angular/animations@npm:13.1.3"
+"@angular/animations@npm:~13.2.6":
+  version: 13.2.6
+  resolution: "@angular/animations@npm:13.2.6"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/core": 13.1.3
-  checksum: b8fd2764aeb51a9f853851f4e331bfcde4f0719b145691dd6424e09fb24facfee56f2d309ccdb114dea7b96bc4c33b1ac2f12112778c6478a38c9ae8e8eeea47
+    "@angular/core": 13.2.6
+  checksum: 77c68d84db91806522065956c339fc8b0dee87137112ea970e2b82a25f2d2c64c236694397f79dffb9e5095b5996fde770bdd614459d73d9594453a4b6f078e6
   languageName: node
   linkType: hard
 
@@ -231,120 +231,119 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/common@npm:~13.1.0":
-  version: 13.1.3
-  resolution: "@angular/common@npm:13.1.3"
+"@angular/common@npm:~13.2.6":
+  version: 13.2.6
+  resolution: "@angular/common@npm:13.2.6"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/core": 13.1.3
+    "@angular/core": 13.2.6
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 7b6cb5c35650c0d5bb0da427675adf1a48c4af75b6bf3280dc300a31df788a5d6d9f1e03b337113e4872b68767ff4f1f4bbb689fe0879c7c8e8c41b4a50f67fc
+  checksum: e9f77527e9f842b3663eaeefb4426b8c094df20f47651dd67dab88731db8f9249b890d5ca77dbbd58ccd808a551c208e2eab6928ab72bee0f31499367d99d267
   languageName: node
   linkType: hard
 
-"@angular/compiler-cli@npm:~13.1.0":
-  version: 13.1.3
-  resolution: "@angular/compiler-cli@npm:13.1.3"
+"@angular/compiler-cli@npm:~13.2.6":
+  version: 13.2.6
+  resolution: "@angular/compiler-cli@npm:13.2.6"
   dependencies:
-    "@babel/core": ^7.8.6
-    canonical-path: 1.0.0
+    "@babel/core": ^7.17.2
     chokidar: ^3.0.0
     convert-source-map: ^1.5.1
     dependency-graph: ^0.11.0
-    magic-string: ^0.25.0
+    magic-string: ^0.26.0
     reflect-metadata: ^0.1.2
     semver: ^7.0.0
     sourcemap-codec: ^1.4.8
     tslib: ^2.3.0
     yargs: ^17.2.1
   peerDependencies:
-    "@angular/compiler": 13.1.3
+    "@angular/compiler": 13.2.6
     typescript: ">=4.4.2 <4.6"
   bin:
     ng-xi18n: bundles/src/bin/ng_xi18n.js
     ngc: bundles/src/bin/ngc.js
     ngcc: bundles/ngcc/main-ngcc.js
-  checksum: 211c7b88035b5b6b745568043e1ae9cf036689a221fbc707ef9696af1ca80be0ca909e8b1b1e1eb314df4ca4311832a2a4868ceb3b5f3554cb7a7ef631173768
+  checksum: 46428dcb0bed6a62e60d6add127cad33e2883620b0f53d8e96f448127a8c352a496c0372053f595e6766caaf723f89ced1e91b2fb8dc108fe81e2810ad3c876b
   languageName: node
   linkType: hard
 
-"@angular/compiler@npm:~13.1.0":
-  version: 13.1.3
-  resolution: "@angular/compiler@npm:13.1.3"
+"@angular/compiler@npm:~13.2.6":
+  version: 13.2.6
+  resolution: "@angular/compiler@npm:13.2.6"
   dependencies:
     tslib: ^2.3.0
-  checksum: 6bb9ecd7273d0553f86a67c2ed47102ed0636dd8cabe817bbc0c3d79b1fa56032b8abda0d89fe8056722c348b2817fb58009286808c2e466b7d9c32ac2abccdd
+  checksum: 7346802a763b010f0ec38fea723f0469f54a54181ff49a4ebe6dfaf27068d12f75ac243549bca49de5a733c012d4fc39cccd923a701454469a988039a91fc1d3
   languageName: node
   linkType: hard
 
-"@angular/core@npm:~13.1.0":
-  version: 13.1.3
-  resolution: "@angular/core@npm:13.1.3"
+"@angular/core@npm:~13.2.6":
+  version: 13.2.6
+  resolution: "@angular/core@npm:13.2.6"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
     rxjs: ^6.5.3 || ^7.4.0
     zone.js: ~0.11.4
-  checksum: 15a8a82b091d81c996a0dc49cf5e8a59edb99198531ebc87fa1af5197f25258b9d60e72f9f9d3a473743a6bbb9bf0b71ac35df3330da6355f7615a75f1ed2700
+  checksum: 9e3471eca3a4ab07f43a91a6bbcc43b7e8eb7c5f6f25b5a07a511527c94f256b9846281dadb844c139375af1949546e4224b3146bf39dbab6af55053aca6f1c7
   languageName: node
   linkType: hard
 
-"@angular/forms@npm:~13.1.0":
-  version: 13.1.3
-  resolution: "@angular/forms@npm:13.1.3"
+"@angular/forms@npm:~13.2.6":
+  version: 13.2.6
+  resolution: "@angular/forms@npm:13.2.6"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/common": 13.1.3
-    "@angular/core": 13.1.3
-    "@angular/platform-browser": 13.1.3
+    "@angular/common": 13.2.6
+    "@angular/core": 13.2.6
+    "@angular/platform-browser": 13.2.6
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 11e2fa0fae98f4f2e4cf4a2c33cd22351310a24238a107a0afdf03afca60b7b346bf957f85e49c5a19f39364a4aed92bce2f80d28d02d5cf73aff442d7206df1
+  checksum: 579fa11046db7ff61e139feae95ecd79da24379ac70ba1032d5309d86a0b67e70cdf53f02a3337e71eb56f39e8cdcc51aba74547063dee164c277904d882d7bb
   languageName: node
   linkType: hard
 
-"@angular/platform-browser-dynamic@npm:~13.1.0":
-  version: 13.1.3
-  resolution: "@angular/platform-browser-dynamic@npm:13.1.3"
+"@angular/platform-browser-dynamic@npm:~13.2.6":
+  version: 13.2.6
+  resolution: "@angular/platform-browser-dynamic@npm:13.2.6"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/common": 13.1.3
-    "@angular/compiler": 13.1.3
-    "@angular/core": 13.1.3
-    "@angular/platform-browser": 13.1.3
-  checksum: e52ba86ab0196276297a2a9a87d719ea795b955db011d5b261dec55a003e75f5aa542193c932c7c21436639fd1be9769ac92899f557afd2d01deb384377a873d
+    "@angular/common": 13.2.6
+    "@angular/compiler": 13.2.6
+    "@angular/core": 13.2.6
+    "@angular/platform-browser": 13.2.6
+  checksum: 2e2ebb672d18ca85683788b0958f409c7e33f2e0f27512be4186f47b97606f36b214b94bd382eccf26909f49f4bef73d01d2d3bbc9a462709cfe575a2928e7ca
   languageName: node
   linkType: hard
 
-"@angular/platform-browser@npm:~13.1.0":
-  version: 13.1.3
-  resolution: "@angular/platform-browser@npm:13.1.3"
+"@angular/platform-browser@npm:~13.2.6":
+  version: 13.2.6
+  resolution: "@angular/platform-browser@npm:13.2.6"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/animations": 13.1.3
-    "@angular/common": 13.1.3
-    "@angular/core": 13.1.3
+    "@angular/animations": 13.2.6
+    "@angular/common": 13.2.6
+    "@angular/core": 13.2.6
   peerDependenciesMeta:
     "@angular/animations":
       optional: true
-  checksum: fedad89e79c10bbca8ded6653301e368bf4afe36b8124c608411d4add0c3764ebe9c6f4172f294772a5451c56beb3f0932850f8e55d6fbb4a6dadeffe56bbfb3
+  checksum: 0dbe3d16563e5924731bef638219d336fd816e1c18d359479b83d7d51aa534ba6a6b275e5336a7a65f04366f36c5688e0c6ed8bff51fb4582e72a875a1e247a7
   languageName: node
   linkType: hard
 
-"@angular/router@npm:~13.1.0":
-  version: 13.1.3
-  resolution: "@angular/router@npm:13.1.3"
+"@angular/router@npm:~13.2.6":
+  version: 13.2.6
+  resolution: "@angular/router@npm:13.2.6"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/common": 13.1.3
-    "@angular/core": 13.1.3
-    "@angular/platform-browser": 13.1.3
+    "@angular/common": 13.2.6
+    "@angular/core": 13.2.6
+    "@angular/platform-browser": 13.2.6
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 308a67c675153d858cdacde6fce11a6c53f5304f4c9db9754a82ba50de1b71aa822d0670a066a2cdd4636b3dc83ef92b7e74fa69b476638095b3f6e6ba5befab
+  checksum: 4dc400d0ba71ea69f71d9118ad81811ea2ef0353d0191ecff9df92a014f91a192bb2d316614dd8ebfc3d0106e2cecced53c040bca38dcdcc7cb7eb8891f26460
   languageName: node
   linkType: hard
 
@@ -394,7 +393,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.1.0, @babel/core@npm:^7.12.3, @babel/core@npm:^7.7.2, @babel/core@npm:^7.8.0, @babel/core@npm:^7.8.6":
+"@babel/core@npm:^7.1.0, @babel/core@npm:^7.12.3, @babel/core@npm:^7.17.2, @babel/core@npm:^7.7.2, @babel/core@npm:^7.8.0":
   version: 7.17.5
   resolution: "@babel/core@npm:7.17.5"
   dependencies:
@@ -3384,13 +3383,6 @@ __metadata:
   version: 1.0.30001314
   resolution: "caniuse-lite@npm:1.0.30001314"
   checksum: d82e1b8b287b1b2d2ed25c4495fe293276853dd9c77553c722929a6142fc49b3dd5ea21a95f6410d93319434a5bd071c304ea92e93debbcf292a9156cf08b35d
-  languageName: node
-  linkType: hard
-
-"canonical-path@npm:1.0.0":
-  version: 1.0.0
-  resolution: "canonical-path@npm:1.0.0"
-  checksum: ed0fa05c2b63ffcda14b63def5ea3c323a6a17282560f02b9cb8c9154fb1fcd3c20dd836deea64382e81088f4f74476022cbd24e422fa1e99e63863e06836f8c
   languageName: node
   linkType: hard
 
@@ -7168,12 +7160,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"magic-string@npm:^0.25.0":
-  version: 0.25.9
-  resolution: "magic-string@npm:0.25.9"
+"magic-string@npm:^0.26.0":
+  version: 0.26.1
+  resolution: "magic-string@npm:0.26.1"
   dependencies:
     sourcemap-codec: ^1.4.8
-  checksum: 9a0e55a15c7303fc360f9572a71cffba1f61451bc92c5602b1206c9d17f492403bf96f946dfce7483e66822d6b74607262e24392e87b0ac27b786e69a40e9b1a
+  checksum: 23f21f5734346ddfbabd7b9834e3ecda3521e3e1db81166c1513b45b729489bbed1eafa8cd052c7db7fdc7c68ebc5c03bc00dd5a23697edda15dbecaf8c98397
   languageName: node
   linkType: hard
 
@@ -8264,16 +8256,16 @@ __metadata:
   dependencies:
     "@angular-builders/jest": ^13.0.2
     "@angular-devkit/build-angular": ~13.2.6
-    "@angular/animations": ~13.1.0
+    "@angular/animations": ~13.2.6
     "@angular/cli": ~13.2.6
-    "@angular/common": ~13.1.0
-    "@angular/compiler": ~13.1.0
-    "@angular/compiler-cli": ~13.1.0
-    "@angular/core": ~13.1.0
-    "@angular/forms": ~13.1.0
-    "@angular/platform-browser": ~13.1.0
-    "@angular/platform-browser-dynamic": ~13.1.0
-    "@angular/router": ~13.1.0
+    "@angular/common": ~13.2.6
+    "@angular/compiler": ~13.2.6
+    "@angular/compiler-cli": ~13.2.6
+    "@angular/core": ~13.2.6
+    "@angular/forms": ~13.2.6
+    "@angular/platform-browser": ~13.2.6
+    "@angular/platform-browser-dynamic": ~13.2.6
+    "@angular/router": ~13.2.6
     "@types/jasmine": ~3.10.0
     "@types/jest": ^27.4.0
     "@types/node": ^12.11.1

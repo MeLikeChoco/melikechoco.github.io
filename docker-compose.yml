@@ -1,0 +1,9 @@
+services:
+  site:
+    container_name: melikechoco.github.io
+    build: 
+      context: .
+      dockerfile: melikechoco.github.io.Dockerfile
+    tty: true
+    ports:
+      - "80:80"

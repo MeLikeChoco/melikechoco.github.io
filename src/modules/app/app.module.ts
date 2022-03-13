@@ -11,7 +11,7 @@ import { InViewDirective } from 'src/modules/app/directives/in-view/in-view.dire
 import { ExperienceComponent } from 'src/modules/app/components/experience/experience.component';
 import { ProjectsComponent } from 'src/modules/app/components/projects/projects.component';
 import { GithubService } from 'src/modules/app/services/github-service/github.service';
-import { LoadingDirective } from 'src/modules/app/directives/loading/loading.directive';
+// import { LoadingDirective } from 'src/modules/app/directives/loading/loading.directive';
 import { LetDirective } from 'src/modules/app/directives/let/let.directive';
 import { AboutMeComponent } from 'src/modules/app/components/about-me/about-me.component';
 import { ThemingComponent } from 'src/modules/app/components/theming/theming.component';
@@ -38,7 +38,7 @@ import { cookieConsentConfig } from 'src/misc';
     AboutMeComponent,
     AppFooterComponent,
     InViewDirective,
-    LoadingDirective,
+    // LoadingDirective,
     LetDirective,
     StylesheetDirective,
     SafePipe,

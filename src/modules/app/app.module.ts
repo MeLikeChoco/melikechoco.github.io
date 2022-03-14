@@ -12,7 +12,6 @@ import { ExperienceComponent } from 'src/modules/app/components/experience/exper
 import { ProjectsComponent } from 'src/modules/app/components/projects/projects.component';
 import { GithubService } from 'src/modules/app/services/github-service/github.service';
 // import { LoadingDirective } from 'src/modules/app/directives/loading/loading.directive';
-import { LetDirective } from 'src/modules/app/directives/let/let.directive';
 import { AboutMeComponent } from 'src/modules/app/components/about-me/about-me.component';
 import { ThemingComponent } from 'src/modules/app/components/theming/theming.component';
 import { StylesheetDirective } from 'src/modules/app/directives/stylesheet/stylesheet.directive';
@@ -39,7 +38,6 @@ import { cookieConsentConfig } from 'src/misc';
     AppFooterComponent,
     InViewDirective,
     // LoadingDirective,
-    LetDirective,
     StylesheetDirective,
     SafePipe,
     KeyValueKeepOrderPipe

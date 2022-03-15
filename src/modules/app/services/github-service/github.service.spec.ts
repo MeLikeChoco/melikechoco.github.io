@@ -17,10 +17,15 @@ describe('GithubService', () => {
       ]
     },
     {
-      url: "MeLikeChoco/TestPrograms",
-      expectedName: "TestPrograms",
+      url: "torvalds/linux",
+      expectedName: "linux",
       expectedLanguages: [
-        "C#"
+        "C",
+        "Assembly",
+        "Shell",
+        "Makefile",
+        "Python",
+        "Perl"
       ]
     }
   ]

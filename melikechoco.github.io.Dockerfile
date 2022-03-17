@@ -14,4 +14,4 @@ ENV PORT=80
 
 EXPOSE 80
 
-CMD sh -c "yarn build && yarn test pipes section tooltip services"
+CMD sh -c "yarn build && yarn test pipes section tooltip services in-view stylesheet"

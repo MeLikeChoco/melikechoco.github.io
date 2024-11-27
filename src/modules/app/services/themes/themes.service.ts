@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { NgcCookieConsentService } from 'ngx-cookieconsent';
-import themes from 'src/assets/themes.json';
+import themesJson from 'src/assets/themes.json';
 
 const themeKey = 'theme';
 
@@ -10,10 +10,10 @@ const themeKey = 'theme';
 })
 export class ThemesService {
 
-  private _themeKeys = Object.keys(themes);
+  private _themeKeys = Object.keys(themesJson);
   private _activeTheme: string;
 
-  themes = themes;
+  themes = themesJson;
 
   get activeTheme() {
     return this._activeTheme;

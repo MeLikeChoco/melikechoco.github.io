@@ -9,18 +9,16 @@ describe('DefaultTooltipComponent', () => {
   let fixture: ComponentFixture<TooltipComponent>;
 
   beforeEach(async () => {
-  });
-
-  beforeEach(async () => {
 
     await TestBed.configureTestingModule({
-      declarations: [TooltipComponent]
+      imports: [TooltipComponent]
     }).compileComponents();
 
     fixture = TestBed.createComponent(TooltipComponent);
     component = fixture.componentInstance;
 
     fixture.detectChanges();
+    await fixture.whenStable();
 
   });
 

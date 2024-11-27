@@ -2,7 +2,8 @@ import { KeyValue, KeyValuePipe } from '@angular/common';
 import { Pipe } from '@angular/core';
 
 @Pipe({
-  name: 'keyvalueKeepOrder'
+  name: 'keyvalueKeepOrder',
+  standalone: true
 })
 export class KeyValueKeepOrderPipe extends KeyValuePipe {
 

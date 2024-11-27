@@ -16,7 +16,7 @@ describe('IntersectionObservableDirective', () => {
   beforeEach(async () => {
 
     await TestBed.configureTestingModule({
-      declarations: [
+      imports: [
         TestComponent,
         InViewDirective
       ]
@@ -38,6 +38,9 @@ describe('IntersectionObservableDirective', () => {
 });
 
 @Component({
+  imports: [
+    InViewDirective
+  ],
   template: `
     <div id="test" in-view></div>
   `

@@ -1,8 +1,9 @@
-import { KeyValue } from '@angular/common';
+import { CommonModule, KeyValue } from '@angular/common';
 import { Component, KeyValueDiffers } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { KeyValueKeepOrderPipe } from './key-value-keep-order.pipe';
+import { it } from '@jest/globals';
 
 let pipe: KeyValueKeepOrderPipe;
 
@@ -22,7 +23,7 @@ describe('KeyValueKeepOrderPipe isolated', () => {
     expect(pipe).toBeTruthy();
   });
 
-  [
+  it.each([
     {
       name: 'unordered letters',
       content: { 'l': 0, 's': 0, 'f': 0, 'd': 0, 'm': 0, 'x': 0, 'q': 0 }
@@ -31,24 +32,20 @@ describe('KeyValueKeepOrderPipe isolated', () => {
       name: 'unordered numbers',
       content: { 93: 0, 15: 0, 49: 0, 27: 0, 65: 0, 71: 0, 47: 0, 11: 0, 92: 0, 48: 0 }
     }
-  ].forEach(params => {
+  ])('$name', params => {
 
-    it(`should preserve order of ${params.name}`, () => {
+    const objectToKVArray = (object: any) => {
+      return Object.entries(object)
+        .reduce((accumulator, kv) => {
+          accumulator.push({ key: kv[0], value: 0 });
+          return accumulator;
+        }, [] as KeyValue<any, 0>[]);
+    }
 
-      const objectToKVArray = (object: any) => {
-        return Object.entries(object)
-          .reduce((accumulator, kv) => {
-            accumulator.push({ key: kv[0], value: 0 });
-            return accumulator;
-          }, [] as KeyValue<any, 0>[]);
-      }
+    const expected = objectToKVArray(params.content);
+    const actual = pipe.transform(params.content);
 
-      const expected = objectToKVArray(params.content);
-      const actual = pipe.transform(params.content);
-
-      expect(actual).toEqual(expected);
-
-    });
+    expect(actual).toEqual(expected);
 
   });
 
@@ -57,29 +54,34 @@ describe('KeyValueKeepOrderPipe isolated', () => {
 describe('KeyValueKeepOrderPipe in component', () => {
 
   let fixture: ComponentFixture<TestComponent>;
+  let component: TestComponent;
 
   beforeEach(async () => {
 
     await TestBed.configureTestingModule({
-      declarations: [
+      imports: [
         TestComponent,
         KeyValueKeepOrderPipe
       ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestComponent);
+    component = fixture.componentInstance;
+
+    fixture.detectChanges();
+    await fixture.whenStable();
 
   });
 
   it('should create an instance', () => {
     expect(fixture).toBeTruthy();
-    expect(fixture.componentInstance).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
   it('should create an instance with list of unordered numbers', () => {
 
     const expected = { 93: 0, 15: 0, 49: 0, 27: 0, 65: 0, 71: 0, 47: 0, 11: 0, 92: 0, 48: 0 }
-    fixture.componentInstance.content = expected;
+    component.content = expected;
 
     fixture.detectChanges();
 
@@ -102,6 +104,10 @@ describe('KeyValueKeepOrderPipe in component', () => {
 });
 
 @Component({
+  imports: [
+    CommonModule,
+    KeyValueKeepOrderPipe
+  ],
   template: `
     <ng-container *ngIf="content">
       <ul id="list">

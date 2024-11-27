@@ -1,10 +1,15 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import experiences from '../../../../assets/experience.json';
+import { CommonModule } from '@angular/common';
 
 @Component({
+  imports:[
+    CommonModule
+  ],
   selector: 'experience',
   templateUrl: './experience.component.html',
-  styleUrls: ['./experience.component.scss']
+  styleUrls: ['./experience.component.scss'],
+  standalone: true
 })
 export class ExperienceComponent implements OnInit {
 

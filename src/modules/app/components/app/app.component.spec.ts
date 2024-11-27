@@ -1,13 +1,25 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async () => {
+
     await TestBed.configureTestingModule({
-      declarations: [
+      imports: [
         AppComponent
       ],
     }).compileComponents();
+
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+
+    fixture.detectChanges();
+    await fixture.whenStable();
+
   });
 
   it('should create the app', () => {
@@ -28,4 +40,5 @@ describe('AppComponent', () => {
   //   const compiled = fixture.nativeElement as HTMLElement;
   //   expect(compiled.querySelector('.content span')?.textContent).toContain('portfolio app is running!');
   // });
+
 });

@@ -1,6 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 
 @Component({
+  imports: [
+    CommonModule
+  ],
   selector: 'app-section',
   templateUrl: './section.component.html',
   styleUrls: ['./section.component.scss']

@@ -11,7 +11,7 @@ describe('StylesheetDirective', () => {
   beforeEach(async () => {
 
     await TestBed.configureTestingModule({
-      declarations: [
+      imports: [
         TestComponent,
         StylesheetDirective
       ]
@@ -42,6 +42,9 @@ describe('StylesheetDirective', () => {
 });
 
 @Component({
+  imports: [
+    StylesheetDirective
+  ],
   template: `
     <div>
       <link id="test" stylesheet />

@@ -1,7 +1,13 @@
-node_modules/
-.vscode/
-.angular/
-dist/
+node_modules
+.git
+.gitignore
+*.md
+dist
 
-.yarn/
-!.yarn/releases/
+// .yarn/*
+// !.yarn/cache
+// !.yarn/patches
+// !.yarn/plugins
+// !.yarn/releases
+// !.yarn/sdks
+// !.yarn/versions

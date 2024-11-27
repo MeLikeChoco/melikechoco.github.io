@@ -7,18 +7,16 @@ import { TooltipService } from './services/tooltip/tooltip-service.service';
 
 
 @NgModule({
-  declarations: [
+  imports: [
+    CommonModule,
     TooltipDirective,
     TooltipComponent
   ],
-  imports: [
-    CommonModule
+  providers: [
+    TooltipService
   ],
   exports: [
     TooltipDirective
-  ],
-  providers: [
-    TooltipService
   ]
 })
 export class TooltipModule { }

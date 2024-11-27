@@ -3,7 +3,6 @@ import { CookieService } from 'ngx-cookie-service';
 import { NgcCookieConsentModule, NgcCookieConsentService } from 'ngx-cookieconsent';
 import { cookieConsentConfig } from 'src/misc';
 import themes from 'src/assets/themes.json';
-
 import { ThemesService } from './themes.service';
 
 describe('ThemesService with cookie consent', () => {
@@ -24,6 +23,7 @@ describe('ThemesService with cookie consent', () => {
 
     TestBed.configureTestingModule({
       providers: [
+        ThemesService,
         CookieService
       ],
       imports: [

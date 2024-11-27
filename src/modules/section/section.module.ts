@@ -6,11 +6,9 @@ import { SectionDirective } from 'src/modules/section/directives/section/section
 
 
 @NgModule({
-  declarations: [
-    SectionComponent,
-    SectionDirective
-  ],
   imports: [
+    SectionComponent,
+    SectionDirective,
     CommonModule
   ],
   exports: [

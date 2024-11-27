@@ -1,12 +1,14 @@
-FROM node:lts-alpine
+FROM node:lts-slim AS base
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 
 WORKDIR /app
 
-COPY package.json yarn.lock .yarnrc.yml ./
+COPY package.json pnpm-lock.yaml ./
 
-COPY .yarn/releases ./.yarn/releases
-
-RUN yarn install
+RUN pnpm install
 
 COPY . .
 
@@ -14,4 +16,4 @@ ENV PORT=80
 
 EXPOSE 80
 
-CMD sh -c "yarn build && yarn test pipes section tooltip services in-view stylesheet"
+CMD sh -c "pnpm build && pnpm test pipes section tooltip services in-view stylesheet"

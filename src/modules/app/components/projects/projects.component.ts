@@ -1,13 +1,19 @@
-import { KeyValue } from '@angular/common';
+import { CommonModule, KeyValue } from '@angular/common';
 import { AfterContentChecked, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { map, Observable, take } from 'rxjs';
 import { GithubService } from 'src/modules/app/services/github-service/github.service';
 import repos from '../../../../assets/repos.json';
+import { KeyValueKeepOrderPipe } from 'src/pipes/keyValueKeepOrder/key-value-keep-order.pipe';
 
 @Component({
+  imports: [
+    CommonModule,
+    KeyValueKeepOrderPipe
+  ],
   selector: 'projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss']
+  styleUrls: ['./projects.component.scss'],
+  standalone: true
 })
 export class ProjectsComponent implements OnInit, AfterContentChecked {
 

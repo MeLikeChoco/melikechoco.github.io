@@ -1,7 +1,8 @@
 import { Directive, ElementRef, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[stylesheet]'
+  selector: '[stylesheet]',
+  standalone: true
 })
 export class StylesheetDirective implements OnInit {
 

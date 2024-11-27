@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { TooltipComponent } from '../../components/tooltip/tooltip.component';
 import { getDefaultTooltipOptions, TooltipPosition } from '../../tooltipOptions';
 import { TooltipDirective } from './tooltip.directive';
+// import { it } from '@jest/globals';
 
 describe('TooltipDirective', () => {
 
@@ -31,7 +32,7 @@ describe('TooltipDirective', () => {
   beforeEach(async () => {
 
     await TestBed.configureTestingModule({
-      declarations: [
+      imports: [
         TestComponent,
         TooltipComponent,
         TooltipDirective
@@ -54,37 +55,34 @@ describe('TooltipDirective', () => {
     const component = fixture.componentInstance;
 
     expect(component).toBeTruthy();
-    expect(component.directive).toBeTruthy();
-    expect(component.directive.options).toEqual(defaultOptions);
+    expect(directive).toBeTruthy();
+    expect(directive.options).toEqual(defaultOptions);
 
   });
 
-  [
+  //used 'test' instead of 'it' because of https://github.com/angular/angular/issues/47603
+  test.each([
     100,
     300,
     500,
     1000
-  ].forEach(delay => {
+  ])('should show (on mouseenter) and hide (on mouseleave) tooltip with %dms delay', fakeAsync(async (delay: number) => {
 
-    it(`should show (on mouseenter) and hide (on mouseleave) tooltip with ${delay}ms delay`, fakeAsync(async () => {
+    directive.delay = delay;
 
-      directive.delay = delay;
+    testElement.triggerEventHandler('mouseenter', {});
+    tick(delay);
+    fixture.detectChanges();
+    await fixture.whenStable();
 
-      testElement.triggerEventHandler('mouseenter', {});
-      tick(delay);
-      fixture.detectChanges();
-      await fixture.whenStable();
+    expect(document.querySelector('.tooltip-default')).toBeTruthy();
 
-      expect(document.querySelector('.tooltip-default')).toBeTruthy();
+    testElement.triggerEventHandler('mouseleave', {});
+    fixture.detectChanges();
 
-      testElement.triggerEventHandler('mouseleave', {});
-      fixture.detectChanges();
+    expect(document.querySelector('.tooltip-default')).toBeNull();
 
-      expect(document.querySelector('.tooltip-default')).toBeNull();
-
-    }));
-
-  });
+  }));
 
   // positions.forEach(position => {
 
@@ -121,6 +119,9 @@ describe('TooltipDirective', () => {
 });
 
 @Component({
+  imports: [
+    TooltipDirective
+  ],
   template: `
     <div id="enter-here" tooltip></div>
   `

@@ -1,13 +1,33 @@
 import { AfterViewChecked, AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { NgcCookieConsentService } from 'ngx-cookieconsent';
+import { NgcCookieConsentModule, NgcCookieConsentService } from 'ngx-cookieconsent';
 import { Subscription } from 'rxjs';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { ThemingComponent } from '../theming/theming.component';
+import { IntroComponent } from '../intro/intro.component';
+import { SkillsComponent } from '../skills/skills.component';
+import { ExperienceComponent } from '../experience/experience.component';
+import { ProjectsComponent } from '../projects/projects.component';
+import { AboutMeComponent } from '../about-me/about-me.component';
+import { AppFooterComponent } from '../footer/app-footer.component';
+import { cookieConsentConfig } from 'src/misc';
 
 @Component({
+  imports:[
+    NavbarComponent,
+    ThemingComponent,
+    IntroComponent,
+    SkillsComponent,
+    ExperienceComponent,
+    ProjectsComponent,
+    AboutMeComponent,
+    AppFooterComponent
+  ],
   selector: 'app',
   templateUrl: './app.component.html',
   styleUrls: [
     './app.component.scss'
-  ]
+  ],
+  standalone: true
 })
 export class AppComponent implements AfterViewInit, AfterViewChecked {
 

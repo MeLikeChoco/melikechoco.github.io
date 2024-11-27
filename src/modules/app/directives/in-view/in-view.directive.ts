@@ -2,7 +2,8 @@ import { AfterViewInit, Directive, ElementRef, EventEmitter, Input, OnDestroy, O
 import { filter, Subject } from 'rxjs';
 
 @Directive({
-  selector: '[in-view]'
+  selector: '[in-view]',
+  standalone: true
 })
 export class InViewDirective implements OnInit, OnDestroy, AfterViewInit {
 

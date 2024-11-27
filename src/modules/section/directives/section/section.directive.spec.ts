@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { SectionComponent } from '../../components/section/section.component';
 import { SectionDirective } from './section.directive';
+import { it } from '@jest/globals';
 
 const backgroundColor = 'white';
 const backgroundColorAlt = 'black';
@@ -16,7 +17,7 @@ describe('SectionDirective', () => {
   beforeEach(async () => {
 
     await TestBed.configureTestingModule({
-      declarations: [
+      imports: [
         TestComponent,
         SectionComponent,
         SectionDirective
@@ -27,6 +28,7 @@ describe('SectionDirective', () => {
     component = fixture.componentInstance;
 
     fixture.detectChanges();
+    await fixture.whenStable();
 
     directive = component.directive;
 
@@ -41,21 +43,17 @@ describe('SectionDirective', () => {
     expect(fixture.debugElement.query(By.css('#test'))).toBeTruthy();
   });
 
-  [
+  it.each([
     'weight',
     'village',
     'shadow'
-  ].forEach(id => {
+  ])('should create section with id "%s"', id => {
 
-    it(`should create section with id "${id}"`, () => {
+    directive.id = id;
 
-      directive.id = id;
+    fixture.detectChanges();
 
-      fixture.detectChanges();
-
-      expect(document.querySelector('#test')).toBeTruthy();
-
-    });
+    expect(document.querySelector('#test')).toBeTruthy();
 
   });
 
@@ -98,6 +96,9 @@ describe('SectionDirective', () => {
 });
 
 @Component({
+  imports: [
+    SectionDirective
+  ],
   template: `
     <div id="test" *section>{{input}}</div>
   `

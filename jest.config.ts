@@ -1,4 +1,6 @@
-module.exports = {
+import type { Config } from "jest";
+
+const config: Config = {
 
     preset: 'jest-preset-angular',
 
@@ -47,4 +49,6 @@ module.exports = {
         '<rootDir>/src/**/*.spec.ts'
     ]
 
-};
+}
+
+export default config;

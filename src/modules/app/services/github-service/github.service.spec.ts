@@ -1,8 +1,8 @@
-import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { take } from 'rxjs';
-
 import { GithubService } from './github.service';
+import { provideHttpClient } from '@angular/common/http';
+import { it } from '@jest/globals'
 
 describe('GithubService', () => {
 
@@ -35,8 +35,10 @@ describe('GithubService', () => {
   beforeEach(() => {
 
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientModule
+      providers: [
+        GithubService,
+        provideHttpClient(),
+        // provideHttpClientTesting()
       ]
     });
 
@@ -48,30 +50,51 @@ describe('GithubService', () => {
     expect(service).toBeTruthy();
   });
 
-  repoParams.forEach(repoParam => {
+  it.each(repoParams)('should return $url', (repoParam, done) => {
 
-    it(`should return ${repoParam.url} repo info`, done => {
+    const repo$ = service.getRepo(repoParam.url);
 
-      const repo$ = service.getRepo(repoParam.url);
+    repo$
+      .pipe(take(1))
+      .subscribe(repo => {
 
-      repo$
-        .pipe(take(1))
-        .subscribe(repo => {
+        expect(repo).toBeTruthy();
+        expect(repo.name).toBe(repoParam.expectedName);
 
-          expect(repo).toBeTruthy();
-          expect(repo.name).toBe(repoParam.expectedName);
+        const repoLangs = Object.keys(repo.languages);
 
-          const repoLangs = Object.keys(repo.languages);
+        repoParam.expectedLanguages.forEach(expectedLang => expect(repoLangs).toContain(expectedLang));
 
-          repoParam.expectedLanguages.forEach(expectedLang => expect(repoLangs).toContain(expectedLang));
+        done();
 
-          done();
-
-        });
-
-    });
+      });
 
   });
+
+  // repoParams.forEach(repoParam => {
+
+  //   it(`should return ${repoParam.url} repo info`, done => {
+
+  //     const repo$ = service.getRepo(repoParam.url);
+
+  //     repo$
+  //       .pipe(take(1))
+  //       .subscribe(repo => {
+
+  //         expect(repo).toBeTruthy();
+  //         expect(repo.name).toBe(repoParam.expectedName);
+
+  //         const repoLangs = Object.keys(repo.languages);
+
+  //         repoParam.expectedLanguages.forEach(expectedLang => expect(repoLangs).toContain(expectedLang));
+
+  //         done();
+
+  //       });
+
+  //   }, 10000);
+
+  // });
 
 });
 

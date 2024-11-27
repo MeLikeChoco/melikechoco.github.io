@@ -8,7 +8,7 @@ const apiBaseUrl = 'https://api.github.com/';
 const baseUrl = 'https://github.com';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GithubService {
 

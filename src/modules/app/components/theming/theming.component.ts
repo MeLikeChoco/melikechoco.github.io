@@ -6,13 +6,15 @@ import { Subscription } from 'rxjs';
 import { ThemesService } from 'src/modules/app/services/themes/themes.service';
 import { KeyValueKeepOrderPipe } from 'src/pipes/keyValueKeepOrder/key-value-keep-order.pipe';
 import { SafePipe } from 'src/pipes/safe/safe.pipe';
+import { StylesheetDirective } from '../../directives/stylesheet/stylesheet.directive';
 
 @Component({
   imports: [
     CommonModule,
     FormsModule,
     KeyValueKeepOrderPipe,
-    SafePipe
+    SafePipe,
+    StylesheetDirective
   ],
   selector: 'theming',
   templateUrl: './theming.component.html',

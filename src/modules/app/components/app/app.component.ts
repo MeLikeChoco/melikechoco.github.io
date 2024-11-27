@@ -10,6 +10,7 @@ import { ProjectsComponent } from '../projects/projects.component';
 import { AboutMeComponent } from '../about-me/about-me.component';
 import { AppFooterComponent } from '../footer/app-footer.component';
 import { cookieConsentConfig } from 'src/misc';
+import { SectionDirective } from 'src/modules/section/directives/section/section.directive';
 
 @Component({
   imports:[
@@ -20,7 +21,8 @@ import { cookieConsentConfig } from 'src/misc';
     ExperienceComponent,
     ProjectsComponent,
     AboutMeComponent,
-    AppFooterComponent
+    AppFooterComponent,
+    SectionDirective
   ],
   selector: 'app',
   templateUrl: './app.component.html',

@@ -4,8 +4,6 @@ import { TooltipDirective } from 'src/modules/tooltip/directives/tooltip/tooltip
 import { TooltipComponent } from './components/tooltip/tooltip.component';
 import { TooltipService } from './services/tooltip/tooltip-service.service';
 
-
-
 @NgModule({
   imports: [
     CommonModule,

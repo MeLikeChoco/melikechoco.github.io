@@ -23,5 +23,18 @@
             "Developed a service to save and offload cloud storage costs by moving over 2 million loan documents to company/onsite servers",
             "Aided and accelerated in opening a new line of business servicing Early Buyout (EBO) loans"
         ]
+    },
+    {
+        "employer": "Black Knight",
+        "title": "Software Developer I",
+        "location": "Remote",
+        "when": "June 2022 - September 2023",
+        "logo": "https://www.blackknightinc.com/wp-content/uploads/2023/03/BK_logo_RGB_RegMark.png",
+        "info": [
+            "Extensive usage of .NET Framework, ASP.NET, Angular, and Azure DevOps",
+            "Collaborated in the development of the Empower Loan Origination System",
+            "Investigated and resolved outstanding bugs by modifying/extending existing logic in a non-disruptive manner",
+            "Resolved critical issues and opened new lines of businesses for finance/banking companies and clients"
+        ]
     }
 ]

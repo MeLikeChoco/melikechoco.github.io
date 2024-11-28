@@ -118,7 +118,10 @@
       "options": {}
     },
     "deploy": {
-      "executor": "angular-cli-ghpages:deploy"
+      "builder": "angular-cli-ghpages:deploy",
+      "options": {
+        "buildTarget": "portfolio:build:production"
+      }
     }
   }
 }
